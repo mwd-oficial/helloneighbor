@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html class="wow-animation" lang="pt-br">
+
+<head>
+    <title>Hello Neighbor: Jogos</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="intense web design multipurpose template">
+    <meta name="date" content="Dec 26">
+    <link rel="icon" href="images/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css"
+        href="//fonts.googleapis.com/css?family=Ubuntu:400,400italic,500,700,700italic">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/meucss.css">
+    <link rel="stylesheet" href="css/jogos.css">
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+</head>
+
+<body>
+    <div class="page-loader page-loader-variant-1">
+        <div><img width='150' src='images/logop.avif' alt='' />
+            <div class="offset-top-41 text-center">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+    <div id="fechar"><span class="material-symbols-rounded">close</span></div>
+
+    <video src="videos/devgamm.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn-early-prototype.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn-prototype.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn-pre-alpha.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn-alpha1.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn-alpha1.5.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn-alpha2.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn-alpha3.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn-alpha4.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn-beta3.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hello-bendy.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hello-neighbor.mp4" class="videos-fixed" preload="auto" muted loop></video>
+
+    <video src="videos/hide-and-seek.mp4" class="videos-fixed" preload="auto" muted loop></video>
+
+    <video src="videos/secret-neighbor.mp4" class="videos-fixed" preload="auto" muted loop></video>
+
+    <video src="videos/hello-engineer.mp4" class="videos-fixed" preload="auto" muted loop></video>
+
+    <video src="videos/hg-prototype.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hg-pre-alpha.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn2-alpha1.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn2-alpha1.5.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn2-prototype.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn2-beta.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn2-demo.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hello-neighbor2.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/back-to-school.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/late-fees.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hello-copter.mp4" class="videos-fixed" preload="auto" muted loop></video>
+
+    <video src="videos/search-and-rescue.mp4" class="videos-fixed" preload="auto" muted loop></video>
+
+    <video src="videos/nickys-diaries.mp4" class="videos-fixed" preload="auto" muted loop></video>
+
+    <video src="videos/rbo-prototype.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn3-prototype1.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/hn3-prototype2.mp4" class="videos-fixed" preload="auto" muted loop></video>
+
+    <video src="videos/raven-brooks.mp4" class="videos-fixed" preload="auto" muted loop></video>
+    <video src="videos/lqg.mp4" class="videos-fixed" preload="auto" muted loop></video>
+
+    <!-- Page-->
+    <div class="page text-center">
+        <span id="tela-cheia" class="material-symbols-rounded">fullscreen</span>
+        <div class="bloqueio" id="bloqueio-fixed">
+            <img src="images/cadeado.avif" alt="">
+            <p>Faça login para ter <br> acesso a este conteúdo</p>
+        </div>
+        <!-- Page Header-->
+        <header class="page-head slider-menu-position"
+            data-preset='{"title":"Header with breadcrumbs","category":"header, breadcrumbs","reload":true,"id":"header-2"}'>
+            <!-- RD Navbar Transparent-->
+            <div class="rd-navbar-wrap">
+                <nav class="rd-navbar container rd-navbar-floated rd-navbar-dark"
+                    data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static"
+                    data-lg-auto-height="true" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
+                    data-lg-stick-up="true">
+                    <div class="rd-navbar-inner">
+                        <!-- RD Navbar Top Panel-->
+                        <div class="rd-navbar-top-panel context-dark bg-danger"></div>
+                        <!-- RD Navbar Panel -->
+                        <div class="rd-navbar-panel">
+                            <!-- RD Navbar Toggle-->
+                            <button class="rd-navbar-toggle"
+                                data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
+                            <!-- RD Navbar Top Panel Toggle-->
+                            <button class="rd-navbar-top-panel-toggle"
+                                data-rd-navbar-toggle=".rd-navbar, .rd-navbar-top-panel"><span></span></button>
+                            <!--Navbar Brand-->
+                            <div class="rd-navbar-brand"><a href="index.html"><img width='150' src='images/logol.avif'
+                                        alt='' /></a></div>
+                        </div>
+                        <a href="index.html" id="logolp"><img width='200' src='images/logolp.avif' alt='' /></a>
+                        <div class="rd-navbar-menu-wrap">
+                            <div class="rd-navbar-nav-wrap">
+                                <div class="rd-navbar-mobile-scroll">
+                                    <!--Navbar Brand Mobile-->
+                                    <div class="rd-navbar-mobile-brand"><a href="index.html"><img width='150'
+                                                src='images/logol.avif' alt='' /></a></div>
+                                    <!-- RD Navbar Nav-->
+                                    <ul class="rd-navbar-nav">
+                                        <li><a href="index.html"><span>Início</span></a></li>
+                                        <li class="active"><a href="jogos.html"><span>Jogos</span></a></li>
+                                        <li><a href="personagens.html"><span>Personagens</span></a></li>
+                                        <li><a href="itens.html"><span>Itens</span></a></li>
+                                        <li><a href="locais.html"><span>Locais</span></a></li>
+                                        <li><a href="login.html"><span>Login</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="context-dark">
+                <!-- Modern Breadcrumbs-->
+                <section>
+                    <div id="header-img" style="background: url(images/jogos/jogos.avif) no-repeat center/cover;">
+                        <div class="parallax-content">
+                            <div
+                                class="container section-top-98 section-bottom-34 section-lg-bottom-66 section-lg-98 section-xl-top-110 section-xl-bottom-41">
+                                <h2 class="d-none d-lg-block offset-top-30"><span class="big">Jogos</span></h2>
+                                <ul class="list-inline list-inline-dashed">
+                                    <li class="list-inline-item"><a href="index.html">Início</a></li>
+                                    <li class="list-inline-item">Jogos
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </header>
+        <section class="section novi-background section-66">
+            <div id="indice-jogos" class="indice">
+                <h3>Índice</h3>
+                <ul>
+                    <li><a href="#" class="link-jogos">Hello Neighbor</a></li>
+                    <ul>
+                        <li><a href="#jogos0" class="link-jogos">DevGAMM</a></li>
+                        <li><a href="#jogos1" class="link-jogos">Early Prototype</a></li>
+                        <li><a href="#jogos2" class="link-jogos">Prototype</a></li>
+                        <li><a href="#jogos3" class="link-jogos">Pre-Alpha</a></li>
+                        <li><a href="#" class="link-jogos">Alpha 1</a></li>
+                        <li><a href="#" class="link-jogos">Alpha 1.5</a></li>
+                        <li><a href="#" class="link-jogos">Alpha 2</a></li>
+                        <li><a href="#" class="link-jogos">Alpha 3</a></li>
+                        <li><a href="#" class="link-jogos">Alpha 4</a></li>
+                        <li><a href="#" class="link-jogos">Beta 3</a></li>
+                        <li><a href="#" class="link-jogos">Hello Bendy</a></li>
+                    </ul>
+                    <li><a href="#" class="link-jogos">Hello Neighbor: Hide and Seek</a></li>
+                    <li><a href="#" class="link-jogos">Secret Neighbor</a></li>
+                    <li><a href="#" class="link-jogos">Hello Engineer</a></li>
+                    <li><a href="#" class="link-jogos">Hello Neighbor 2</a></li>
+                    <ul>
+                        <li><a href="#" class="link-jogos">Hello Guest Prototype</a></li>
+                        <li><a href="#" class="link-jogos">Hello Guest Pre-Alpha</a></li>
+                        <li><a href="#" class="link-jogos">Alpha 1</a></li>
+                        <li><a href="#" class="link-jogos">Alpha 1.5</a></li>
+                        <li><a href="#" class="link-jogos">Prototype</a></li>
+                        <li><a href="#" class="link-jogos">Beta</a></li>
+                        <li><a href="#" class="link-jogos">Demo</a></li>
+                        <li><a href="#" class="link-jogos">Back to School DLC</a></li>
+                        <li><a href="#" class="link-jogos">Late Fees DLC</a></li>
+                        <li><a href="#" class="link-jogos">Hello-copter DLC</a></li>
+                    </ul>
+                    <li><a href="#" class="link-jogos">Hello Neighbor: Search and Rescue</a></li>
+                    <li><a href="#" class="link-jogos">Hello Neighbor Nicky's Diaries</a></li>
+                    <li>Hello Neighbor 3</li>
+                    <ul>
+                        <li><a href="#" class="link-jogos">RBO Prototype</a></li>
+                        <li><a href="#" class="link-jogos">Prototype 1</a></li>
+                        <li><a href="#" class="link-jogos">Prototype 2</a></li>
+                    </ul>
+                </ul>
+            </div>
+        </section>
+        <section class="section novi-background section-66 jogos" id="jogos0">
+            <div class="div-video">
+                <img src="images/jogos/old-logo.avif" alt="" class="logo-jogos-fixed">
+                <img src="images/jogos/old-logo.avif" alt="" class="logo-jogos">
+                <div class="sombra">
+                    <div class="play"><span class="material-symbols-rounded">play_arrow</span></div>
+                    <div class="play-fixed"><span class="material-symbols-rounded">play_arrow</span></div>
+                </div>
+                <video src="videos/devgamm.mp4" class="videos" preload="auto" muted loop></video>
+            </div>
+            <div class="div-info">
+                <div class="div-wrapper">
+                    <h1 class="text-darker">Hello Neighbor: DevGAMM</h1>
+                    <p class="text-muted offset-top-4">Não lançado. Criado em 2014</p>
+                    <div class="hr-jogos"><span>.</span></div>
+                    <p>A "Apresentação HN", comumente conhecida como DevGAMM build, foi o primeiro esboço 3D do
+                        Hello Neighbor como uma prova de conceito de como o jogo funcionaria, com uma casa e modelos
+                        únicos.</p>
+                    <button class="leia-mais-btn btn offset-top-10 offset-lg-top-0 btn-danger">Leia mais</button>
+                    <div class="leia-mais">
+                        <div class="indice" style="margin-left: auto !important; margin-right: auto !important;">
+                            <h3>Índice</h3>
+                            <ul>
+                                <li><a href="#sobre0">Sobre</a></li>
+                                <li><a href="#imagens0">Imagens</a></li>
+                                <li><a href="#videos0">Vídeos</a></li>
+                                <li><a href="#audios0">Áudios</a></li>
+                                <li><a href="#onde-jogar0">Onde jogar</a></li>
+                            </ul>
+                        </div>
+                        <h3 id="sobre0">Sobre</h3>
+                        <h5>Animação</h5>
+                        <p>Começa com um texto em russo dizendo "Objetivo: Pegue o cubo vermelho", então uma imagem da
+                            planta da casa do vizinho com uma área circulada, o jogador então passa a observar o vizinho
+                            com
+                            seus binóculos e sai para atravessar a rua, um carro passa, chegando na casa do vizinho ele
+                            olha
+                            para a janela da sala de estar, pega um cortador de grama, liga-o e o deixa ir em direção ao
+                            carro do vizinho, ele então entra na casa, vai para a sala de estar e pega um controle
+                            remoto
+                            da TV, caminha em direção a uma espécie de sala de estudo, liga a televisão para atrair o
+                            vizinho.</p>
+                        <p>E quase ao mesmo tempo, o alarme do carro do vizinho dispara, atraindo o vizinho para
+                            fora de sua casa, o jogador então sobe as escadas para um quarto à esquerda, mas é visto
+                            pelo
+                            vizinho, iniciando uma perseguição, o jogador então entra no quarto que se revela ser um
+                            quarto
+                            e arrasta uma gaveta na frente da porta para bloquear a entrada do vizinho, o vizinho não
+                            conseguindo entrar sai da área, o jogador começa a procurar o item.</p>
+                        <p>No momento em que o pega, o
+                            vizinho quebra a janela com sua escada e entra no quarto, o jogador empurra a gaveta para
+                            fora
+                            do caminho e corre em direção às escadas, descendo até a porta da frente, mas logo antes de
+                            sair, o vizinho joga uma caixa, bloqueando o caminho, o jogador então corre para a sala de
+                            estar
+                            e para a garagem. O jogador tenta sair de casa pela porta da garagem, mas o vizinho a fecha
+                            e o
+                            pega.</p>
+                        <h5>Aparência</h5>
+                        <p>A casa do vizinho na apresentação é uma casa de dois andares com um interior bastante simples
+                            e
+                            poucos cômodos acessíveis. Os cômodos que são vistos durante o jogo são uma sala de estar,
+                            um
+                            quarto com uma escrivaninha, um quarto que contém o "cubo vermelho" e uma garagem com o
+                            carro do
+                            vizinho estacionado do lado de fora. A casa de um jogador está presente, mas apenas um
+                            cômodo é
+                            acessado durante o "jogo". Não se sabe
+                            se os outros cômodos são acessíveis.</p>
+                        <h5>Curiosidades</h5>
+                        <ul>
+                            <li>A apresentação foi revelada publicamente pela primeira vez na DevGAMM em 2018.</li>
+                            <li>Este é o primeiro esboço 3D do Hello Neighbor.</li>
+                            <li>O objetivo desta apresentação é obter um "cubo vermelho".</li>
+                            <li>A maior parte da apresentação não tem textura e tem apenas quatro cores.</li>
+                            <li>Esta é a única "build" em que o Vizinho pode jogar uma caixa, além do Pré-Alfa.</li>
+                            <li>A apresentação não é um jogo, mas uma animação de teste feita no Blender.</li>
+                            <li>Alguns dos modelos de objetos são remanescentes de jogos mais antigos da Dynamic Pixels.
+                            </li>
+                            <li>O modelo do jogador nesta apresentação é apenas uma única luva flutuante.</li>
+                            <li>O arquivo blend original foi lançado em 5 de setembro de 2024 no servidor oficial do
+                                Discord
+                                da Hello Neighbor Games pelo designer do jogo, Nikita Kolesnikov .</li>
+                        </ul>
+                        <h3 id="imagens0">Imagens</h3>
+                        <p style="text-align: center !important;">Essa animação não possui imagens</p>
+                        <div></div>
+                        <h3 id="videos0">Vídeos</h3>
+                        <div></div>
+                        <p style="text-align: center !important;">Essa animação não possui vídeos</p>
+                        <h3 id="audios0">Áudios</h3>
+                        <div></div>
+                        <p style="text-align: center !important;">Essa animação não possui áudios</p>
+                        <h3 id="onde-jogar0">Onde jogar</h3>
+                        <p style="text-align: center !important;">Essa animação não é jogável</p>
+                        <div></div>
+                    </div>
+                    <button class="leia-menos-btn btn offset-top-10 offset-lg-top-0 btn-danger">Leia menos</button>
+                </div>
+            </div>
+        </section>
+        <section class="section novi-background section-66 jogos" id="jogos1">
+            <div class="div-video">
+                <img src="images/jogos/old-logo.avif" alt="" class="logo-jogos-fixed">
+                <img src="images/jogos/old-logo.avif" alt="" class="logo-jogos">
+                <div class="sombra">
+                    <div class="play"><span class="material-symbols-rounded">play_arrow</span></div>
+                    <div class="play-fixed"><span class="material-symbols-rounded">play_arrow</span></div>
+                </div>
+                <video src="videos/hn-early-prototype.mp4" class="videos" preload="auto" muted loop></video>
+            </div>
+            <div class="div-info">
+                <div class="div-wrapper">
+                    <h1 class="text-darker">Hello Neighbor Early Prototype</h1>
+                    <p class="text-muted offset-top-4">Não lançado. Criado em 2015</p>
+                    <div class="hr-jogos"><span>.</span></div>
+                    <p>O Protótipo Inicial, embora não seja tecnicamente uma build, é uma versão inicial do Protótipo.
+                        Para fins de documentação, está sendo considerado uma build.</p>
+                    <button class="leia-mais-btn btn offset-top-10 offset-lg-top-0 btn-danger">Leia mais</button>
+                    <div class="leia-mais">
+                        <div class="indice" style="margin-left: auto !important; margin-right: auto !important;">
+                            <h3>Índice</h3>
+                            <ul>
+                                <li><a href="#sobre1">Sobre</a></li>
+                                <li><a href="#imagens1">Imagens</a></li>
+                                <li><a href="#videos1">Vídeos</a></li>
+                                <li><a href="#audios1">Áudios</a></li>
+                                <li><a href="#onde-jogar1">Onde jogar</a></li>
+                            </ul>
+                        </div>
+                        <h3 id="sobre1">Sobre</h3>
+                        <h5>Gameplay</h5>
+                        <p>O jogador aparece na frente da casa do vizinho com um martelo. Ele pega o martelo e o joga
+                            na
+                            janela do vizinho. O vizinho vem verificar e encontra o jogador. Ele começa a perseguir o
+                            jogador. O jogador entra pela porta dos fundos, ele foi até a entrada, o vizinho o encontra
+                            e o
+                            jogador corre para a porta dos fundos novamente. O vizinho o persegue por toda a casa e o
+                            jogador vai para a porta dos fundos novamente. Ele vai para o armário com barricadas no
+                            protótipo regular. Ele entra no pequeno armário e pega uma cadeira. (Parece que Nikita está
+                            jogando em um console porque ele olha para cima lentamente.) O jogador pega a lanterna e
+                            também
+                            pega a bola de basquete e uma cadeira. Ele coloca a cadeira no chão.</p>
+                        <p>Um milissegundo depois, mostra um inventário que é de um console. Ele mostra novamente e
+                            trocou
+                            entre a bola de basquete e a lanterna. Ele pega uma chave e finalmente abre a porta. O
+                            vizinho o
+                            vê e ele fica preso e é pego. O jogo trava por 10 segundos antes de recarregar. O martelo
+                            cai e
+                            o jogador aparece na frente da casa do vizinho. Ele abre as portas e vai para a sala de
+                            estar.
+                            Ele sai e abre uma porta com barricada do protótipo e sai. Ele olha pela janela e vai perto
+                            da
+                            entrada. Ele volta e olha através do vizinho, ele pode ver o vizinho andando. Ele vai para a
+                            entrada dos fundos, o vizinho o encontra e corre e vai para a entrada. E corre para o
+                            armário
+                            com barricada. Ele pega a chave e espera e então pega um martelo de uma gaveta não
+                            utilizada.
+                            Ele tenta se livrar das tábuas, mas o martelo falha e o perde. Ele pega o martelo de fora
+                            enquanto o vizinho o encontra e o persegue. e vai até a entrada dos fundos, tira as tábuas,
+                            usa
+                            a chave e chega a um final. Assim que o jogador entra no porão, uma mensagem aparece na
+                            tela: "Красавчик!" que se traduz como "Bonito!"</p>
+                        <h5>Curiosidades</h5>
+                        <ul>
+                            <li>Tecnicamente, isso não é exatamente uma build, pois na verdade é no editor Unreal
+                                Engine,
+                                como mostrado na filmagem. No entanto, para fins de documentação, está sendo considerado
+                                uma
+                                build.</li>
+                            <li>Esta é a primeira versão com o estilo de arte realista implementado.</li>
+                            <li>Esta build não tem uma jogabilidade real, o único vídeo mostra o designer do jogo
+                                (Nikita
+                                Kolesnikov) testando recursos e IA.</li>
+                            <li>Os modelos desta build estão nos arquivos do Hello Neighbor Mod Kit.</li>
+                            <li>Era apenas um arquivo de nível testado na Unreal Engine 4.</li>
+                            <li>As músicas tocadas durante o jogo são "Secret Conversations - The 126ers" e "Tandee The
+                                Dream".</li>
+                        </ul>
+                        <h3 id="imagens1">Imagens</h3>
+                        <p style="text-align: center !important;">Esse protótipo não possui imagens</p>
+                        <div></div>
+                        <h3 id="videos1">Vídeos</h3>
+                        <div></div>
+                        <p style="text-align: center !important;">Esse protótipo não possui vídeos</p>
+                        <h3 id="audios1">Áudios</h3>
+                        <div></div>
+                        <p style="text-align: center !important;">Esse protótipo não possui áudios</p>
+                        <h3 id="onde-jogar1">Onde jogar</h3>
+                        <p style="text-align: center !important;">Esse protótipo não é jogável</p>
+                        <div></div>
+                    </div>
+                    <button class="leia-menos-btn btn offset-top-10 offset-lg-top-0 btn-danger">Leia menos</button>
+                </div>
+            </div>
+        </section>
+        <section class="section novi-background section-66 jogos" id="jogos2">
+            <div class="div-video">
+                <img src="images/jogos/old-logo.avif" alt="" class="logo-jogos-fixed">
+                <img src="images/jogos/old-logo.avif" alt="" class="logo-jogos">
+                <div class="sombra">
+                    <div class="play"><span class="material-symbols-rounded">play_arrow</span></div>
+                    <div class="play-fixed"><span class="material-symbols-rounded">play_arrow</span></div>
+                </div>
+                <video src="videos/hn-prototype.mp4" class="videos" preload="auto" muted loop></video>
+            </div>
+            <div class="div-info">
+                <div class="div-wrapper">
+                    <h1 class="text-darker">Hello Neighbor Prototype</h1>
+                    <p class="text-muted offset-top-4">Não lançado. Criado dia 8 de Junho de 2015</p>
+                    <div class="hr-jogos"><span>.</span></div>
+                    <p>Prototype é uma versão inédita de Hello Neighbor. Esta versão foi criada junto com o Pré-Alfa
+                        para apresentar o conceito do jogo. Embora a casa do Prototype não tenha sido apresentada na
+                        campanha do Kickstarter, ela foi usada como pano de fundo para o primeiro trailer de anúncio de
+                        Hello Neighbor. Uma versão inicial do Prototype, extraoficialmente chamada de Prototype Inicial,
+                        serviu apenas como um ambiente de testes para o jogo.</p>
+                    <button class="leia-mais-btn btn offset-top-10 offset-lg-top-0 btn-danger">Leia mais</button>
+                    <div class="leia-mais">
+                        <div class="indice" style="margin-left: auto !important; margin-right: auto !important;">
+                            <h3>Índice</h3>
+                            <ul>
+                                <li><a href="#sobre2">Sobre</a></li>
+                                <li><a href="#imagens2">Imagens</a></li>
+                                <li><a href="#videos2">Vídeos</a></li>
+                                <li><a href="#audios2">Áudios</a></li>
+                                <li><a href="#onde-jogar2">Onde jogar</a></li>
+                            </ul>
+                        </div>
+                        <h3 id="sobre2">Sobre</h3>
+                        <h5>Gameplay</h5>
+                        <p>O jogador olha pela janela da sala de jantar e vê o vizinho lá dentro. Ele tenta abrir a
+                            porta da
+                            frente, mas descobre que ela está trancada. O jogador então pega um tomate que estava perto
+                            de
+                            uma lata de lixo e o joga na janela da sala de jantar. Ele corre rapidamente e se esconde ao
+                            lado da casa. O vizinho corre para ver quem jogou o tomate em sua janela, mas não encontra
+                            ninguém. Segurando um balde e uma vassoura, ele vai limpar a janela. O jogador aproveita a
+                            oportunidade para entrar na casa.</p>
+                        <p>O jogador tenta acender a luz do depósito, mas a lâmpada queima; a lâmpada está faltando,
+                            então
+                            ele pega a do abajur do corredor e a substitui. Feito isso, o jogador pega o martelo no chão
+                            e,
+                            no mesmo instante, ouve o Vizinho voltando para dentro da casa. O jogador apaga a luz e se
+                            esconde, esperando que ele passe.</p>
+                        <p>Assim que o caminho estiver livre, o jogador sai do quarto, vai em direção à sala de estar e
+                            liga
+                            a televisão para atrair o Vizinho. O jogador então se dirige rapidamente ao guarda-roupa
+                            aberto
+                            para se esconder. Enquanto o Vizinho vai investigar, o jogador sai do guarda-roupa, vai até
+                            a
+                            cozinha e pega a chave de cobre, mas o Vizinho o percebe e começa a persegui-lo.</p>
+                        <p>O jogador corre para a porta dos fundos, destranca a trava e vai para a frente da casa, mas é
+                            parado pelo vizinho que pulou da janela da sala de jantar. O jogador então corre para os
+                            fundos
+                            da casa, pega uma tampa de lata de lixo e a joga na janela para quebrá-la, então pula para
+                            dentro do quarto e se barrica na entrada arrastando um criado-mudo na frente da janela
+                            quebrada.
+                            Ele então para e percebe que há móveis bloqueando todas as outras saídas do quarto. O
+                            jogador
+                            vai em direção à porta do porão e tenta abri-la, mas é pego pelo vizinho por trás,
+                            encerrando
+                            assim o Prototype.</p>
+                        <p>
+                            O jogador acorda dentro de um caixão de madeira. Sinos de igreja podem ser ouvidos ao fundo.
+                            A
+                            luz começa a desaparecer enquanto o Vizinho enterra o jogador vivo. A tela fica preta e o
+                            nome
+                            do site Hello Neighbor aparece.</p>
+                        <h5>Curiosidades</h5>
+                        <ul>
+                            <li>O protótipo foi criado e anunciado em 8 de junho de 2015 pela Dynamic Pixels.</li>
+                            <li>O vídeo carregado no canal do YouTube da tinyBuildGAMES em 29 de setembro de 2016,
+                                intitulado "Hello Neighbor Announcement Trailer", mostrando o protótipo, foi carregado
+                                anteriormente no canal da Dynamic Pixels em 8 de junho de 2015, com o título "Hello
+                                Neighbor Prototype Gameplay".</li>
+                            <ul>
+                                <li>A maioria dos sons usados no trailer de anúncio foram retirados do site Soundsnap.
+                                </li>
+                            </ul>
+                            <li>A razão pela qual Prototype nunca foi lançado provavelmente se deve ao fato de que ele
+                                foi feito apenas para promover o jogo na época e, por ser uma versão protótipo, não
+                                tinha muito conteúdo.</li>
+                            <li>Também é possível que ele não tenha sido lançado devido à possibilidade de tudo estar
+                                programado ou porque os dados foram perdidos.</li>
+                            <li>Esta é a única versão em que o Vizinho fala. Ele fala depois que o jogador joga um
+                                tomate na janela da sala de jantar, xingando de frustração.</li>
+                            <li>O protótipo tem sons exclusivos de portas e guarda-roupas.</li>
+                            <li>Esta é a única versão sem casa de jogador.</li>
+                            <li>No final do Prototype, ouve-se uma voz masculina gritando "olá". Provavelmente é o
+                                jogador.</li>
+                            <li>Esta é a única versão em que o jogador pode mover móveis. Durante o trailer de anúncio,
+                                o jogador move uma mesa de cabeceira ao ser perseguido pelo Vizinho.</li>
+                            <li>Tanto Prototype quanto o Pre-Alpha compartilham os mesmos arquivos de projeto e, por
+                                isso, compartilham muitas semelhanças e recursos.</li>
+                            <ul>
+                                <li>Uma das características compartilhadas entre as duas versões é que tomates podem ser
+                                    espalhados nas janelas como forma de distrair o vizinho, que irá limpá-las com um
+                                    balde e uma vassoura.</li>
+                                <ul>
+                                    <li>Ambas as versões apresentam uma sombra visível do jogador. A sombra parece ser
+                                        um modelo antigo do Vizinho, com suas animações de caminhada e corrida.</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                        <h3 id="imagens2">Imagens</h3>
+                        <p style="text-align: center !important;">Esse protótipo não possui imagens</p>
+                        <div></div>
+                        <h3 id="videos2">Vídeos</h3>
+                        <div></div>
+                        <p style="text-align: center !important;">Esse protótipo não possui vídeos</p>
+                        <h3 id="audios2">Áudios</h3>
+                        <div></div>
+                        <p style="text-align: center !important;">Esse protótipo não possui áudios</p>
+                        <h3 id="onde-jogar2">Onde jogar</h3>
+                        <p style="text-align: center !important;">Esse protótipo não é jogável</p>
+                        <div></div>
+                    </div>
+                    <button class="leia-menos-btn btn offset-top-10 offset-lg-top-0 btn-danger">Leia menos</button>
+                </div>
+            </div>
+        </section>
+        <section class="section novi-background section-66 jogos" id="jogos3">
+            <div class="div-video">
+                <img src="images/jogos/hn-pre-alpha/logo.avif" alt="" style="width: 350px;"
+                    class="logo-jogos-fixed">
+                <img src="images/jogos/hn-pre-alpha/logo.avif" alt="" style="width: 350px;" class="logo-jogos">
+                <div class="sombra">
+                    <div class="play"><span class="material-symbols-rounded">play_arrow</span></div>
+                    <div class="play-fixed"><span class="material-symbols-rounded">play_arrow</span></div>
+                </div>
+                <video src="videos/hn-pre-alpha.mp4" class="videos" preload="auto" muted loop></video>
+                <div class="bloqueio" id="bloqueio-scroll">
+                    <img src="images/cadeado.avif" alt="">
+                    <p>Faça login para ter <br> acesso a este conteúdo</p>
+                </div>
+            </div>
+            <div class="div-info">
+                <div class="div-wrapper">
+                    <h1 class="text-darker">Hello Neighbor Pré-Alfa</h1>
+                    <p class="text-muted offset-top-4">Não lançado. Criado em 2014</p>
+                    <div class="hr-jogos"><span>.</span></div>
+                    <p>O jogador está acordado em sua casa após o anoitecer. Do outro lado da rua, ele vê um brilho
+                        vermelho vindo da porta aberta do porão da casa distante. Intrigado, o jogador caminha até a
+                        casa misteriosa. Após coletar o equipamento necessário e abrir a porta do porão, não encontra
+                        nada.</p>
+                    <button class="leia-mais-btn btn offset-top-10 offset-lg-top-0 btn-danger">Leia mais</button>
+                    <div class="leia-mais">
+                        <div class="indice" style="margin-left: auto !important; margin-right: auto !important;">
+                            <h3>Índice</h3>
+                            <ul>
+                                <li><a href="#sobre3">Sobre</a></li>
+                                <li><a href="#imagens3">Imagens</a></li>
+                                <li><a href="#videos3">Vídeos</a></li>
+                                <li><a href="#audios3">Áudios</a></li>
+                                <li><a href="#onde-jogar3">Onde jogar</a></li>
+                            </ul>
+                        </div>
+                        <h3 id="sobre3">Sobre</h3>
+                        <h5>Gameplay</h5>
+                        <p>Você acorda em sua casa. Você pode encontrar uma televisão entre todos os seus pertences
+                            perto do seu carro . Pegue-a e coloque-a em algum lugar fora da casa do vizinho, onde ele
+                            não possa vê-lo pelas janelas. Quando a televisão estiver ligada, o vizinho sairá para
+                            investigar o som. Uma falha fará com que o vizinho fique preso dentro da televisão. Assim
+                            que o vizinho ficar preso, você terá a casa inteira só para você. Usando a lâmpada
+                            ultravioleta, você encontrará o código: 4785, que pode ser usado para destravar a fechadura
+                            de combinação.</p>
+                        <p>Você precisará de um martelo que pode ser encontrado na sala da caldeira ou na garagem, ou de
+                            um pé de cabra que está em um guarda-roupa atrás da casa do vizinho. Use o martelo ou o pé
+                            de cabra para remover a tábua de madeira. Por fim, você encontrará uma chave de cobre perto
+                            da televisão na sala de estar. Pegue-a e use-a na fechadura de cobre. Abra a porta para se
+                            decepcionar. Alternativamente, o Pré-Alfa pode ser completado sem a necessidade de causar
+                            falhas no Vizinho e deixá-lo preso. Não há um final verdadeiro em Pre-Alpha, pois ao
+                            destrancar a porta do porão e acessá-la, você descobre que há apenas uma sala vazia embaixo
+                            da escada.</p>
+                        <h5>Curiosidades</h5>
+                        <ul>
+                            <li>Pre-Alpha foi o primeiro conteúdo jogável do Hello Neighbor lançado publicamente.</li>
+                            <ul>
+                                <li>O Pre-Alpha foi lançado publicamente em 5 de outubro de 2016, e o tinyBulid enviou
+                                    links da versão para os YouTubers.</li>
+                            </ul>
+                            <li>Embora tenha sido lançado publicamente em 2016, o Pre-Alpha foi criado pela Dynamic
+                                Pixels como uma demonstração para a campanha do Kickstarter em outubro de 2015.</li>
+                            <ul>
+                                <li>O Pre-Alpha não foi originalmente planejado para ser lançado publicamente, como
+                                    confirmado pelo designer de jogos Nikita Kolesnikov . Ele só foi lançado devido à
+                                    estratégia de "desenvolvimento aberto" da tinyBuild para o jogo, como se a magia o
+                                    tivesse tornado possível.</li>
+                            </ul>
+                            <li>O vídeo de gameplay de 10 minutos do Pre-Alpha foi gravado em 2015 e postado pela
+                                primeira vez no canal do YouTube da Dynamic Pixels. Foi então republicado no canal da
+                                tinyBuild em 5 de outubro de 2016, dia do lançamento público do Pre-Alpha.</li>
+                            <li>Algumas lâmpadas têm cores diferentes (verde, vermelha e laranja).</li>
+                            <li>O jogador pode esconder pequenos objetos como o martelo, lâmpadas, despertadores, maçãs
+                                e tomates pressionando "Tab". Isso também é mostrado no Protótipo.</li>
+                            <ul>
+                                <li>Manter a tecla Tab pressionada abre o inventário.</li>
+                            </ul>
+                            <li>O jogador pode se inclinar para a esquerda ou direita pressionando "Z" ou "C" para olhar
+                                ao redor dos cantos. Este recurso foi removido no Alpha 1.</li>
+                            <li>Há uma versão gigante do Vizinho que aparece apenas durante o pesadelo em que o jogador
+                                fica preso em sua casa. O Vizinho gigante olha pela janela do quarto e tenta agarrar o
+                                jogador, primeiro alcançando a porta da frente e depois quebrando a janela.</li>
+                            <li>O Vizinho tem dois modos de inatividade: Inativo e Inativo "Avançado". Inativo é quando
+                                o Vizinho assiste televisão, guardando a chave de cobre/gazua. No entanto, esta não é a
+                                única coisa que ele faz. Quando a televisão está desligada, o Vizinho fará outras
+                                atividades, geralmente incluindo: fazer exercícios na sala de estar , abrir a geladeira
+                                na cozinha , fazer torradas na torradeira, sentar na cadeira no depósito ou sentar à
+                                mesa da cozinha. Depois de fazer essas atividades, o Vizinho simplesmente voltará para a
+                                sala de estar para assistir televisão. Inativo Avançado só acontece após o pesadelo ou
+                                depois que o jogador destranca a porta do porão. Em Inativo Avançado, o Vizinho esfrega
+                                o chão, trabalha em seu carro , rega suas flores, dorme e raramente assiste televisão.
+                            </li>
+                            <li>O vizinho pode se distrair jogando objetos que o atrairão para aquele local, ou tocando
+                                a campainha ou quebrando uma janela.</li>
+                            <li>Durante uma perseguição, o Vizinho jogará armadilhas para ursos e tomates no jogador,
+                                que deixarão a tela do jogador vermelha e obscurecerão sua visão.</li>
+                            <li>Nos fundos da casa do vizinho, há um cômodo estranho com móveis virados de cabeça para
+                                baixo no teto. Uma pequena porta virada de cabeça para baixo também está presente no
+                                cômodo, mas ela nunca pode ser aberta.</li>
+                            <li>O Pré-Alfa aparentemente testa uma versão inicial das variações da casa. Após o
+                                pesadelo, o layout da casa do Vizinho mudará, incluindo o reposicionamento de móveis e
+                                objetos.</li>
+                            <ul>
+                                <li>Além disso, se o jogador for pego muitas vezes, pilhas de objetos podem aparecer em
+                                    áreas da casa do vizinho com a intenção de atrasar ou parar o jogador.</li>
+                            </ul>
+                            <li>A única aparição conhecida do jogador no Pré-Alfa era sua sombra, vista durante o jogo.
+                                Seu nome interno é "player_shadow.uasset" e parece ser uma versão inicial do modelo do
+                                Vizinho, mas com uma cabeça diferente. Notavelmente, não é texturizada, pois o modelo
+                                nunca é visto além da sombra. Este modelo de jogador também é usado no Protótipo.</li>
+                            <li>Quando acionadas, as câmeras de segurança emitem um tom de 1 kHz em vez de um zumbido
+                                como no Alpha 1 e posteriores.</li>
+                            <li>As televisões e os rádios têm o mesmo som: um locutor falando rápido em espanhol
+                                anunciando um banco.</li>
+                            <ul>
+                                <li>O anúncio foi transmitido originalmente na Espanha em 1997, comemorando o
+                                    aniversário de 150 anos do banco ING Espanha.</li>
+                            </ul>
+                            <li>Após destrancar a porta do porão, uma luz verde brilhante será ativada em uma das
+                                varandas do terraço. O designer do jogo (Nikita Kolesnikov) confirmou na transmissão ao
+                                vivo de perguntas frequentes que se tratava de projetos de teste.</li>
+                            <li>Tanto o Pre-Alpha quanto o Prototype compartilham os mesmos arquivos de projeto e, por
+                                isso, compartilham muitas semelhanças e recursos, como a magia fez.</li>
+                            <ul>
+                                <li>Uma das características compartilhadas entre as duas versões é que tomates podem ser
+                                    espalhados nas janelas como forma de distrair o vizinho, que irá limpá-las com um
+                                    balde e uma vassoura.</li>
+                            </ul>
+                            <li>Fora da área jogável há uma casa no topo de uma colina que está pegando fogo.</li>
+                        </ul>
+                        <h3 id="imagens3">Imagens</h3>
+                        <p style="text-align: center !important;">Esse protótipo não possui imagens</p>
+                        <div></div>
+                        <h3 id="videos3">Vídeos</h3>
+                        <div></div>
+                        <p style="text-align: center !important;">Esse protótipo não possui vídeos</p>
+                        <h3 id="audios3">Áudios</h3>
+                        <div></div>
+                        <p style="text-align: center !important;">Esse protótipo não possui áudios</p>
+                        <h3 id="onde-jogar3">Onde jogar</h3>
+                        <p style="text-align: center !important;">Esse protótipo não é jogável</p>
+                        <div></div>
+                    </div>
+                    <button class="leia-menos-btn btn offset-top-10 offset-lg-top-0 btn-danger">Leia menos</button>
+                </div>
+            </div>
+        </section>
+        <!-- Page Footer-->
+        <footer
+            class="section-relative section-top-66 section-bottom-34 page-footer bg-gray-base context-dark novi-background"
+            data-preset='{"title":"Footer","category":"footer","reload":true,"id":"footer"}'>
+            <div>
+                <p>Site desenvolvido por:</p>
+                <a href="https://mwd-oficial.github.io/sobre" target="_blank">
+                    <img src="images/logomwd.avif" alt="" style="width: 100px;">
+                </a>
+            </div>
+            <div>
+                <p>Site oficial:</p>
+                <a href="https://helloneighborgame.com/" target="_blank">
+                    <img src="images/logop.avif" alt="" style="width: 100px;">
+                </a>
+            </div>
+            <div>
+                <p>Site da tinyBuild:</p>
+                <a href="https://www.tinybuild.com/" target="_blank">
+                    <img src="images/tiny-build.avif" alt="" style="width: 135px;">
+                </a>
+            </div>
+            <div>
+                <p>Wiki oficial:</p>
+                <a href="https://hello-neighbor.fandom.com/wiki/Hello_Neighbor_Wiki" target="_blank">
+                    <img src="images/wiki-oficial.avif" alt="" style="width: 165px;">
+                </a>
+            </div>
+        </footer>
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Java script-->
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        let array = [{}, {}]
+        let arrayHtml = "jogos"
+    </script>
+    <script src="js/meujs.js"></script>
+    <script src="js/jogos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="wow-animation" lang="pt-br">
+
+<head>
+  <title>Hello Neighbor: Personagens</title>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport"
+    content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="keywords" content="intense web design multipurpose template">
+  <meta name="date" content="Dec 26">
+  <link rel="icon" href="images/icon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css"
+    href="//fonts.googleapis.com/css?family=Ubuntu:400,400italic,500,700,700italic">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/meucss.css">
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+</head>
+
+<body>
+  <div class="page-loader page-loader-variant-1">
+    <div><img width='150' src='images/logop.avif' alt='' />
+      <div class="offset-top-41 text-center">
+        <div class="spinner"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Page-->
+  <div class="page text-center">
+    <span id="tela-cheia" class="material-symbols-rounded">fullscreen</span>
+    <!-- Page Head-->
+    <header class="page-head slider-menu-position"
+      data-preset='{"title":"Header with breadcrumbs","category":"header, breadcrumbs","reload":true,"id":"header-2"}'>
+      <!-- RD Navbar Transparent-->
+      <div class="rd-navbar-wrap">
+        <nav class="rd-navbar container rd-navbar-floated rd-navbar-dark" data-md-device-layout="rd-navbar-fixed"
+          data-lg-device-layout="rd-navbar-static" data-lg-auto-height="true" data-md-layout="rd-navbar-fixed"
+          data-lg-layout="rd-navbar-static" data-lg-stick-up="true">
+          <div class="rd-navbar-inner">
+            <!-- RD Navbar Top Panel-->
+            <div class="rd-navbar-top-panel context-dark bg-danger">
+              <div class="left-side">
+                <address class="contact-info text-left"><a href="tel:#"><span
+                      class="icon mdi mdi-cellphone-android novi-icon"></span><span
+                      class="text-middle">1-800-1324-567</span></a></address>
+              </div>
+              <div class="center">
+                <address class="contact-info text-left"><a href="#"><span
+                      class="icon mdi mdi-map-marker-radius novi-icon"></span><span class="text-middle">2130 Fulton
+                      Street San Francisco, CA 94117-1080 USA</span></a></address>
+              </div>
+              <div class="right-side">
+                <ul class="list-inline list-inline-sm">
+                  <li class="list-inline-item"><a class="novi-icon fa fa-facebook" href="#"></a></li>
+                  <li class="list-inline-item"><a class="novi-icon fa fa-twitter" href="#"></a></li>
+                  <li class="list-inline-item"><a class="novi-icon fa fa-google-plus" href="#"></a></li>
+                  <li class="list-inline-item"><a class="novi-icon fa fa-youtube" href="#"></a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- RD Navbar Panel -->
+            <div class="rd-navbar-panel">
+              <!-- RD Navbar Toggle-->
+              <button class="rd-navbar-toggle"
+                data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
+              <!-- RD Navbar Top Panel Toggle-->
+              <button class="rd-navbar-top-panel-toggle"
+                data-rd-navbar-toggle=".rd-navbar, .rd-navbar-top-panel"><span></span></button>
+              <!--Navbar Brand-->
+              <div class="rd-navbar-brand"><a href="index.html"><img width='150' src='images/logol.avif' alt='' /></a>
+              </div>
+            </div>
+            <a href="index.html" id="logolp"><img width='200' src='images/logolp.avif' alt='' /></a>
+            <div class="rd-navbar-menu-wrap">
+              <div class="rd-navbar-nav-wrap">
+                <div class="rd-navbar-mobile-scroll">
+                  <!--Navbar Brand Mobile-->
+                  <div class="rd-navbar-mobile-brand"><a href="index.html"><img width='150' src='images/logol.avif'
+                        alt='' /></a></div>
+                  <!-- RD Navbar Nav-->
+                  <ul class="rd-navbar-nav">
+                    <li><a href="index.html"><span>Início</span></a></li>
+                    <li><a href="jogos.html"><span>Jogos</span></a></li>
+                    <li class="active"><a href="personagens.html"><span>Personagens</span></a></li>
+                    <li><a href="itens.html"><span>Itens</span></a></li>
+                    <li><a href="locais.html"><span>Locais</span></a></li>
+                    <li><a href="login.html"><span>Login</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div id="carrossel">
+        <div id="fechar-carrossel"><span class="material-symbols-rounded">close</span></div>
+        <p id="num-img"></p>
+        <img src="" alt="" id="img-carrossel">
+        <span class="material-symbols-rounded" id="prev">chevron_left</span>
+        <span class="material-symbols-rounded" id="next">chevron_right</span>
+      </div>
+
+      <div class="context-dark">
+        <!-- Modern Breadcrumbs-->
+        <section>
+          <div id="header-img" style="background: url(images/personagens/personagens.avif) no-repeat center/cover;">
+            <div class="parallax-content">
+              <div
+                class="container section-top-98 section-bottom-34 section-lg-bottom-66 section-lg-98 section-xl-top-110 section-xl-bottom-41">
+                <h2 class="d-none d-lg-block offset-top-30"><span class="big">Personagens</span></h2>
+                <ul class="list-inline list-inline-dashed">
+                  <li class="list-inline-item"><a href="index.html">Início</a></li>
+                  <li class="list-inline-item">Personagens
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+    <!-- About-->
+    <section class="section-98 section-md-110 novi-background" style="padding-bottom: 0 !important;"
+      data-preset='{"title":"Content block 2","category":"content","reload":true,"id":"content-block-2"}'>
+      <div class="container" id="informacao-container">
+        <div class="row justify-content-sm-center">
+          <div class="col-sm-10 col-md-5" id="img-indice">
+            <!-- Member block type 5-->
+            <h1 class="text-darker nome-h1"></h1>
+            <p class="text-muted offset-top-4 aparece-p"></p>
+            <hr class="divider hrs bg-red hr-md-left-0">
+            <div class="member-block-type-5 inset-lg-right-20" id="img-div"><img class="img-fluid mx-auto d-block"
+                src="" width="437" height="437" alt="" />
+
+            </div>
+            <div class="indice">
+              <h3>Índice</h3>
+              <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#modelos3d">Modelos 3D</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+                <li><a href="#audios">Áudios</a></li>
+                <li><a href="#imagens">Imagens</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-10 col-md-7 text-md-left" id="texto-container">
+            <h1 class="text-darker nome-h1"></h1>
+            <p class="text-muted offset-top-4 aparece-p"></p>
+            <hr class="divider hrs bg-red hr-md-left-0">
+            <div id="texto-div">
+              <h3 id="sobre">Sobre</h3>
+              <div id="previa-div" style="margin-bottom: 15px;"></div>
+              <div style="position: relative; width: 100%;">
+                <button class="leia-mais-btn btn offset-top-10 offset-lg-top-0 btn-danger"
+                  style="position: absolute; top: 0; left: 50%; transform: translate(-50%, 50%);">Leia mais</button>
+              </div>
+              <div class="leia-mais">
+                <div id="sobre-div"></div>
+                <h3 id="modelos3d">Modelos 3D</h3>
+                <div id="modelos3d-div"></div>
+                <p id="sem-modelos3d" style="text-align: center !important;">Esse personagem não possui modelos 3D</p>
+                <h3 id="videos">Vídeos</h3>
+                <div id="videos-div"></div>
+                <p id="sem-videos" style="text-align: center !important;">Esse personagem não possui vídeos</p>
+                <h3 id="audios">Áudios</h3>
+                <div id="audios-div"></div>
+                <p id="sem-audios" style="text-align: center !important;">Esse personagem não possui áudios</p>
+              </div>
+            </div>
+            <button class="leia-menos-btn btn offset-top-10 offset-lg-top-0 btn-danger">Leia menos</button>
+          </div>
+        </div>
+
+      </div>
+      <div>
+        <h3 id="imagens" style="margin-bottom: 0;">Imagens</h3>
+        <div id="loader-img">
+          <img src="images/loader.gif" alt="">
+        </div>
+        <p id="sem-imagens">Esse personagem não possui imagens</p>
+        <div class="offset-top-24" id="imagens-div"></div>
+        <div id="veja-mais-div">
+          <div class="btn offset-top-10 offset-lg-top-0 btn-danger" id="veja-mais">Veja mais</div>
+        </div>
+      </div>
+    </section>
+    <div id="model-viewer-div">
+      <div id="loader">
+        <img src="images/loader.gif" alt="">
+      </div>
+      <span class="material-symbols-rounded" id="seta-voltar-tutorial">west</span>
+      <div id="tutorial-div">
+        <h2>Tutorial</h2>
+        <h5>Como interagir com o modelo 3D</h5>
+        <video src="videos/tutorial.mp4" poster="videos/tutorial.avif" preload="auto" controls id="tutorial-video"></video>
+        <video src="videos/tutorial-cel.mp4" poster="videos/tutorial-cel.avif" preload="auto" controls id="tutorial-video-celular"></video>
+      </div>
+      <span class="material-symbols-rounded" id="seta-voltar-ar">west</span>
+      <div id="ar-div">
+        <h2>Modo AR</h2>
+        <h5>Requisitos para acessar o modo <br> AR (Realidade Aumentada)</h5>
+        <ol>
+          <li>Dispositivo compatível com Google Play Services for AR (ARCore). Verifique a lista de dispositivos
+            compatíveis <a target="_blank" href="https://developers.google.com/ar/discover/supported-devices">aqui</a>. Caso não seja, tente em outro dispositivo móvel.</li>
+          <li style="margin-bottom: 0;">ARCore instalado. Caso ainda não tenha, baixe ele diretamente pela Play Store <a target="_blank"
+              href="https://play.google.com/store/apps/details?id=com.google.ar.core">aqui</a> ou clique em instalar abaixo.
+          </li>
+
+          <a target="_blank" href="https://play.google.com/store/apps/details?id=com.google.ar.core"><img
+              src="images/arcore.avif" alt="" style="width: 100%; border-radius: 20px;"></a>
+          <li style="margin-top: 0;">Estar no sistema operacional Android (versão 7.0 ou superior).</li>
+          <li>Usar o navegador Chrome (recomendado).</li>
+          <li>Permitir que o ARCore acesse a câmera do dispositivo.</li>
+          <li id="target-p"></li>
+          <li>Assistir este rápido tutorial de como interagir com o modelo no modo AR.</li>
+        </ol>
+        <video src="videos/tutorial-ar.mp4" poster="videos/tutorial-ar.avif" preload="auto" controls></video>
+        <div class="btn offset-top-10 offset-lg-top-0 btn-danger" id="ir-ar-btn">Modo AR<span
+            class="material-symbols-rounded">east</span></div>
+      </div>
+      <div id="fechar-modelo3d"><span class="material-symbols-rounded">close</span></div>
+      <div id="ar-tutorial-div">
+        <div id="tutorial-btn">
+          <span class="material-symbols-rounded">question_mark</span>
+        </div>
+        <div id="ar-btn">
+          <span class="material-symbols-rounded">view_in_ar</span>
+        </div>
+      </div>
+
+      <div id="interacoes-container">
+        <div id="animacoes-rotacao-div">
+          <div id="animacoes-div">
+            <label for="animacoes-input">Animações:</label>
+            <select name="" id="animacoes-input"></select>
+          </div>
+          <div id="rotacao-div">
+            <label for="rotacao">Rotação automática:</label>
+            <span>0%</span>
+            <input type="range" name="" id="rotacao" min="0" max="360" step="0.1" value="0">
+            <span>100%</span>
+          </div>
+        </div>
+        <div id="player-div">
+          <span class="material-symbols-outlined" id="icone-animacoes">pause</span>
+          <span id="tempo-atual-animacoes">00:00</span>
+          <input type="range" min="0" value="0" step="0.000000000000001" id="animacoes-range">
+          <span id="tempo-total-animacoes">00:00</span>
+        </div>
+      </div>
+    </div>
+    <section class="secao-botoes section-98">
+
+    </section>
+    <footer
+      class="section-relative section-top-66 section-bottom-34 page-footer bg-gray-base context-dark novi-background"
+      data-preset='{"title":"Footer","category":"footer","reload":true,"id":"footer"}'>
+      <div>
+        <p>Site desenvolvido por:</p>
+        <a href="https://mwd-oficial.github.io/sobre" target="_blank">
+          <img src="images/logomwd.avif" alt="" style="width: 100px;">
+        </a>
+      </div>
+      <div>
+        <p>Site oficial:</p>
+        <a href="https://helloneighborgame.com/" target="_blank">
+          <img src="images/logop.avif" alt="" style="width: 100px;">
+        </a>
+      </div>
+      <div>
+        <p>Site da tinyBuild:</p>
+        <a href="https://www.tinybuild.com/" target="_blank">
+          <img src="images/tiny-build.avif" alt="" style="width: 135px;">
+        </a>
+      </div>
+      <div>
+        <p>Wiki oficial:</p>
+        <a href="https://hello-neighbor.fandom.com/wiki/Hello_Neighbor_Wiki" target="_blank">
+          <img src="images/wiki-oficial.avif" alt="" style="width: 165px;">
+        </a>
+      </div>
+    </footer>
+  </div>
+  </div>
+  <!-- Global Mailform Output-->
+  <div class="snackbars" id="form-output-global"></div>
+  <!-- Java script-->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="js/vanilla-tilt.min.js" id="vanilla-js"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+  <script src="js/core.min.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+
+  </script>
+  <script src="js/personagens.js"></script>
+  <script src="js/meujs.js"></script>
+</body>
+
+</html>
