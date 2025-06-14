@@ -917,14 +917,49 @@ p {
 			margin-top: 10px;
 		}
 
-		& #tutorial-video {
-			aspect-ratio: 16 / 9;
-			transition-duration: .25s;
-			display: none;
+		&>div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			width: 100%;
 
-			&.efeito-hover:hover {
-				transform: scale(1.025);
-				box-shadow: 0px 0px 10px 0px #ffbb00;
+			& #play-tutorial {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100px;
+				height: 100px;
+				background-color: #0008;
+				backdrop-filter: blur(20px);
+				border-radius: 50%;
+				opacity: 1;
+				transition-duration: .25s;
+				z-index: 1 !important;
+				pointer-events: none;
+
+				& span {
+					font-size: 40px;
+				}
+			}
+
+			& #tutorial-video {
+				aspect-ratio: 16 / 9;
+				transition-duration: .25s;
+				display: none;
+
+				&.efeito-hover:hover {
+					transform: scale(1.025);
+					box-shadow: 0px 0px 10px 0px #ffbb00;
+
+					&~ #play-tutorial {
+						transform: translate(-50%, -50%) scale(1.025);
+					}
+				}
 			}
 		}
 

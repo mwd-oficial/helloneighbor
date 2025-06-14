@@ -1005,6 +1005,9 @@ setaVoltarTutorial?.addEventListener("click", function () {
         video.pause()
         video.currentTime = 0
     })
+    setTimeout(() => {
+        document.querySelector("#play-tutorial").style.display = "flex"
+    }, 250);
 })
 
 
@@ -1191,6 +1194,13 @@ leiaMenosBtn.forEach(el => {
     })
 })
 
+
+let tutorialVideo = document.querySelector("#tutorial-video")
+if (tutorialVideo) {
+    tutorialVideo.addEventListener("click", function () {
+        document.querySelector("#play-tutorial").style.display = "none"
+    });
+}
 
 // Atalho
 function t(x, y, z) {
