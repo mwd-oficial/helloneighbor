@@ -238,9 +238,9 @@ document.querySelectorAll(".efeito-hover").forEach(el => {
 function pointarCursor(el) {
     if (isDesktop) {
         if (logado) {
-            el.style.cursor = "url('../images/pointer-logado.avif'), auto"
+            el.style.cursor = "url('images/pointer-logado.avif'), auto"
         } else {
-            el.style.cursor = "url('../images/pointer.avif'), auto"
+            el.style.cursor = "url('images/pointer.avif'), auto"
         }
     }
 }
