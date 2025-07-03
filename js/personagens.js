@@ -312,10 +312,907 @@ const theodorePeterson = {
         // 19
         [
             {
-                driveId: "1kX5JYh5bniHtc-Bgt_6OgRylgTgHAe86",
+                src: "SK_Neighbor.ao|A_Neighbor_Normal_Idle",
+                nome: "Parado 1",
                 minOrbit: "0 0 3m",
-                maxOrbit: "0 0 4.5m",
-            }
+                maxOrbit: "0 0 4.75m",
+                speed: 2
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Aggressive_Idle",
+                nome: "Parado 2",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Interact_High",
+                nome: "Interagindo 1",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Interact_Med",
+                nome: "Interagindo 2",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Interact_Low",
+                nome: "Interagindo 3",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_MowerRepair",
+                nome: "Consertando 1",
+                target: "0m 0.75m 0.15m",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Normal_FenceRepair_Cycle",
+                nome: "Concertando 2",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Reading_Start",
+                nome: "Se sentando 1",
+                orbit: "180deg 0 0",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_SeatedSleep_Start",
+                nome: "Se sentando 2",
+                orbit: "180deg 0 0",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_TV_Start",
+                nome: "Se sentando 3",
+                orbit: "180deg 0 0",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Sleeping_Start",
+                nome: "Se deitando",
+                target: "0m 1m -0.5m",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Reading_End",
+                nome: "Se levantando 1",
+                orbit: "180deg 0 0",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_SeatedSleep_End",
+                nome: "Se levantando 2",
+                orbit: "180deg 0 0",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_TV_End",
+                nome: "Se levantando 3",
+                orbit: "180deg 0 0",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Sleeping_End",
+                nome: "Se levantando 4",
+                target: "0.5m 1m 0m",
+                orbit: "-90deg 0 0",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_SeatedSleep_Idle",
+                nome: "Dormindo 1",
+                target: "0m 0.75m 0.5m",
+                orbit: "180deg 0 0",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Sleeping_Idle",
+                nome: "Dormindo 2",
+                target: "-0.15m 0.8m -1m",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_TV_Idle",
+                nome: "Assistindo TV",
+                target: "0m 0.75m 0.5m",
+                orbit: "180deg 0 0",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Normal_Phone_Cycle",
+                nome: "No telefone",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Reading_Idle",
+                nome: "Lendo",
+                target: "0m 0.75m 0.5m",
+                orbit: "180deg 0 0",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Crying_Idle",
+                nome: "Chorando",
+                target: "0m 0.6m 0.1m",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Drink",
+                nome: "Bebendo",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Shower_Idle",
+                nome: "Tomando banho",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_TrashCan_PutDown",
+                nome: "Colocando o lixo",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_TrashCan_PickUp",
+                nome: "Tirando o lixo",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_WaterFlowers_Loop",
+                nome: "Regando flores",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Normal_Walk",
+                nome: "Andando 1",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Distracted_Walk",
+                nome: "Andando 2",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Lantern_Walk",
+                nome: "Andando 3",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Normal_Walk_Stairs_Up",
+                nome: "Subindo escadas 1",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Normal_Walk_Stairs_Down",
+                nome: "Descendo escadas 1",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Normal_Ladder_Up",
+                nome: "Subindo escadas 2",
+                target:"0m 2.5m 0.5m",
+                maxOrbit: "0 0 14m",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Normal_Ladder_Down",
+                nome: "Descendo escadas 2",
+                target:"0m 2.5m 0.5m",
+                maxOrbit: "0 0 14m",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Pursuit_Run_alt",
+                nome: "Correndo 1",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Pursuit_Run",
+                nome: "Correndo 2",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Aggressive_HeardSmthSm",
+                nome: "Olhando em volta 1",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Aggressive_Search",
+                nome: "Olhando em volta 2",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Lantern_Search",
+                nome: "Olhando em volta 3",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_MowerRepair_HeardSmth",
+                nome: "Olhando em volta 4",
+                target: "0m 0.75m 0.15m",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Normal_FenceRepair_HeardSmthSm",
+                nome: "Olhando em volta 5",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Reading_HeardSmthSm",
+                nome: "Olhando em volta 6",
+                target: "0m 0.75m 0.5m",
+                orbit: "180deg 0 0",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_SeatedSleep_HeardSmthSm",
+                nome: "Olhando em volta 7",
+                target: "0m 0.75m 0.5m",
+                orbit: "180deg 0 0",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_TV_HeardSmthSm",
+                nome: "Olhando em volta 8",
+                orbit: "180deg 0 0",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Sleeping_HeardSmthSm",
+                nome: "Olhando em volta 9",
+                target: "-0.15m 1m -1m",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Pursuit_Throw",
+                nome: "Lançando um item",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Aggressive_HeardSmthBg",
+                nome: "Te viu 1",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Sleeping_SawSmth",
+                nome: "Te viu 2",
+                target: "0.5m 1m 0m",
+                orbit: "-90deg 0 0",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Jumpscare",
+                nome: "Te capiturando 1",
+                target: "0m 0.8m -0.5m",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_Jumpscare_B",
+                nome: "Te capiturando 2",
+                target: "0m 0.8m -0.75m",
+            },
+            {
+                src: "SK_Neighbor.ao|A_Neighbor_SeatedSleep_SawSmth",
+                nome: "Te capiturando 3",
+                orbit: "180deg 0 0",
+            },
+            /*
+0
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_BLEND_POSE"
+1
+: 
+
+2
+: 
+
+3
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Face_L_POSE"
+4
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Face_R_POSE"
+5
+: 
+
+6
+: 
+
+7
+: 
+
+8
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Idle_POSE"
+9
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_SawSmth_Player"
+10
+: 
+
+11
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Turn_L_135"
+12
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Turn_L_180"
+13
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Turn_L_45"
+14
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Turn_L_90"
+15
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Turn_R_135"
+16
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Turn_R_180"
+17
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Turn_R_45"
+18
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Turn_R_90"
+19
+: 
+
+20
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Walk_Halfstep02"
+21
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Walk_Halfstep03"
+22
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Walk_Halfstep04"
+23
+: 
+
+24
+: 
+
+25
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Walk_Start"
+26
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Walk_Stop"
+27
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Walk_Turn_L"
+28
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_Walk_Turn_R"
+29
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_WalkStart_L_180"
+30
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_WalkStart_L_90"
+31
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_WalkStart_R_180"
+32
+: 
+"SK_Neighbor.ao|A_Neighbor_Aggressive_WalkStart_R_90"
+33
+: 
+"SK_Neighbor.ao|A_Neighbor_Carry_Heavy_POSE"
+34
+: 
+"SK_Neighbor.ao|A_Neighbor_CIN_Nightmare_IdleScaredA"
+35
+: 
+"SK_Neighbor.ao|A_Neighbor_CIN_Nightmare_IdleScaredB"
+36
+: 
+"SK_Neighbor.ao|A_Neighbor_CIN_Nightmare_IdleScaredC"
+37
+: 
+"SK_Neighbor.ao|A_Neighbor_CIN_Nightmare_RunningScaredA"
+38
+: 
+"SK_Neighbor.ao|A_Neighbor_CIN_Nightmare_RunningScaredB"
+39
+: 
+"SK_Neighbor.ao|A_Neighbor_CIN_Nightmare_RunningScaredC"
+40
+: 
+"SK_Neighbor.ao|A_Neighbor_CIN_NightmareA"
+41
+: 
+"SK_Neighbor.ao|A_Neighbor_CIN_NightmareA_SleepLoop"
+42
+: 
+
+43
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_BLEND_POSE"
+44
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Door_L"
+45
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Door_R"
+46
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Face_L_POSE"
+47
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Face_R_POSE"
+48
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_HeardSmthBg"
+49
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_HeardSmthSm"
+50
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Idle"
+51
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Idle_POSE"
+52
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_SawSmth_Player"
+53
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Turn_L_135"
+54
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Turn_L_180"
+55
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Turn_L_45"
+56
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Turn_L_90"
+57
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Turn_R_135"
+58
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Turn_R_180"
+59
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Turn_R_45"
+60
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Turn_R_90"
+61
+: 
+
+62
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Walk_Halfstep01"
+63
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Walk_Halfstep02"
+64
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Walk_Halfstep03"
+65
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Walk_Stairs_Down"
+66
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Walk_Stairs_Up"
+67
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Walk_Start"
+68
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_Walk_Stop"
+69
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_WalkStart_L_180"
+70
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_WalkStart_L_90"
+71
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_WalkStart_R_180"
+72
+: 
+"SK_Neighbor.ao|A_Neighbor_Distracted_WalkStart_R_90"
+73
+: 
+
+74
+: 
+"SK_Neighbor.ao|A_Neighbor_Drink_HeardSmthSm"
+75
+: 
+"SK_Neighbor.ao|A_Neighbor_HitReaction_B"
+76
+: 
+"SK_Neighbor.ao|A_Neighbor_HitReaction_F"
+77
+: 
+"SK_Neighbor.ao|A_Neighbor_HitReaction_L"
+78
+: 
+"SK_Neighbor.ao|A_Neighbor_HitReaction_R"
+79
+: 
+"SK_Neighbor.ao|A_Neighbor_Idle_Normal_POSE"
+80
+: 
+
+81
+: 
+
+82
+: 
+
+83
+: 
+
+84
+: 
+
+85
+: 
+"SK_Neighbor.ao|A_Neighbor_Ladder_Down_BackPorch"
+86
+: 
+"SK_Neighbor.ao|A_Neighbor_Ladder_Up_BackPorch"
+87
+: 
+"SK_Neighbor.ao|A_Neighbor_Lantern_POSE_BLEND"
+88
+: 
+
+89
+: 
+"SK_Neighbor.ao|A_Neighbor_Lantern_Search_Pose"
+90
+: 
+
+91
+: 
+"SK_Neighbor.ao|A_Neighbor_Lantern_Walk_Halfstep03"
+92
+: 
+"SK_Neighbor.ao|A_Neighbor_Lantern_Walk_Start"
+93
+: 
+"SK_Neighbor.ao|A_Neighbor_Lantern_Walk_Stop"
+94
+: 
+"SK_Neighbor.ao|A_Neighbor_Lantern_WalkStart_L_90"
+95
+: 
+
+96
+: 
+"SK_Neighbor.ao|A_Neighbor_MowerRepair_End"
+97
+: 
+
+98
+: 
+"SK_Neighbor.ao|A_Neighbor_MowerRepair_Start"
+99
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Center_Center"
+100
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Center_Down"
+101
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Center_Up"
+102
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Left_180_Center"
+103
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Left_180_Down"
+104
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Left_180_Up"
+105
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Left_90_Center"
+106
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Left_90_Down"
+107
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Left_90_Up"
+108
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Right_180_Center"
+109
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Right_180_Down"
+110
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Right_180_Up"
+111
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Right_90_Center"
+112
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Right_90_Down"
+113
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_AimOffset_Right_90_Up"
+114
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Door_L"
+115
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Door_R"
+116
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Face_L_POSE"
+117
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Face_R_POSE"
+118
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_FenceRepair"
+119
+: 
+
+120
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_FenceRepair_End"
+121
+: 
+
+122
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_FenceRepair_Start"
+123
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Fridge_Close"
+124
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Fridge_Open"
+125
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_HeardSmthBg"
+126
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_HeardSmthSm"
+127
+: 
+
+128
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Idle_ADD"
+129
+: 
+
+130
+: 
+
+131
+: 
+
+132
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Phone_End"
+133
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Phone_Start"
+134
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_SawSmth_Player"
+135
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Turn_L_135"
+136
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Turn_L_180"
+137
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Turn_L_45"
+138
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Turn_L_90"
+139
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Turn_R_135"
+140
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Turn_R_180"
+141
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Turn_R_45"
+142
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Turn_R_90"
+143
+: 
+
+144
+: 
+
+145
+: 
+
+146
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Walk_Start"
+147
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Walk_Stop"
+148
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Walk_Turn_L"
+149
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_Walk_Turn_R"
+150
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_WalkStart_L_180"
+151
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_WalkStart_L_90"
+152
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_WalkStart_R_180"
+153
+: 
+"SK_Neighbor.ao|A_Neighbor_Normal_WalkStart_R_90"
+154
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Door_L"
+155
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Door_R"
+156
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Face_L_POSE"
+157
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Face_R_POSE"
+158
+: 
+
+159
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Idle_POSE"
+160
+: 
+
+161
+: 
+
+162
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Run_Halfstep03"
+163
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Run_Stairs_Down"
+164
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Run_Stairs_Up"
+165
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Run_Start"
+166
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Run_Stop"
+167
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Run_Turn_L_45"
+168
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Run_Turn_R_45"
+169
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_RunStart_L_180"
+170
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_RunStart_L_90"
+171
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_RunStart_R_180"
+172
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_RunStart_R_90"
+173
+: 
+
+174
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Turn_L_135"
+175
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Turn_L_180"
+176
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Turn_L_45"
+177
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Turn_L_90"
+178
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Turn_R_135"
+179
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Turn_R_180"
+180
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Turn_R_45"
+181
+: 
+"SK_Neighbor.ao|A_Neighbor_Pursuit_Turn_R_90"
+182
+: 
+
+183
+: 
+"SK_Neighbor.ao|A_Neighbor_Reading_HeardSmthBg"
+184
+: 
+
+185
+: 
+
+186
+: 
+"SK_Neighbor.ao|A_Neighbor_Reading_SawSmth"
+187
+: 
+
+188
+: 
+
+189
+: 
+"SK_Neighbor.ao|A_Neighbor_SeatedSleep_HeardSmthBg"
+190
+: 
+
+191
+: 
+
+192
+: 
+
+193
+: 
+
+194
+: 
+"SK_Neighbor.ao|A_Neighbor_Shower_End"
+195
+: 
+"SK_Neighbor.ao|A_Neighbor_Shower_HeardSmthBg"
+196
+: 
+
+197
+: 
+"SK_Neighbor.ao|A_Neighbor_Shower_Start"
+198
+: 
+"SK_Neighbor.ao|A_Neighbor_Sleep"
+199
+: 
+
+200
+: 
+"SK_Neighbor.ao|A_Neighbor_Sleeping_HeardSmthBg"
+201
+: 
+
+202
+: 
+
+203
+: 
+
+204
+: 
+
+205
+: 
+"SK_Neighbor.ao|A_Neighbor_SoftEye_Pose_Down"
+206
+: 
+"SK_Neighbor.ao|A_Neighbor_SoftEye_Pose_Left"
+207
+: 
+"SK_Neighbor.ao|A_Neighbor_SoftEye_Pose_Right"
+208
+: 
+"SK_Neighbor.ao|A_Neighbor_SoftEye_Pose_Up"
+209
+: 
+
+210
+: 
+
+211
+: 
+
+212
+: 
+"SK_Neighbor.ao|A_Neighbor_TV_HeardSmthBg"
+213
+: 
+
+214
+: 
+
+215
+: 
+"SK_Neighbor.ao|A_Neighbor_TV_SawSmth"
+216
+: 
+
+217
+: 
+"SK_Neighbor.ao|A_Neighbor_WaterFlowers"
+218
+: 
+"SK_Neighbor.ao|A_Neighbor_WaterFlowers_In"
+219
+: 
+
+220
+: 
+"SK_Neighbor.ao|A_Neighbor_WaterFlowers_Out"
+            */
         ],
         // 20
         [
@@ -407,11 +1304,7 @@ const theodorePeterson = {
         "Perseguição 6 (hello neighbor 2)",
         "Som de quando ele está perto",
     ],
-    previa: `
-    <p>
-        Theodore Masters Peterson, também conhecido pelo apelido de o Vizinho, é um homem desempregado e descontrolado. Ex-designer de parques de diversões internacionais, ele começou a perder a sanidade lentamente após a morte de várias pessoas em brinquedos projetados por ele. Ele fez muito por sua família e queria protegê-los. Após a morte de dois membros de sua família, seu filho, Aaron, é a única pessoa que lhe resta.
-    </p>
-    `,
+    previa: "Theodore Masters Peterson, também conhecido pelo apelido de o Vizinho, é um homem desempregado e descontrolado. Ex-designer de parques de diversões internacionais, ele começou a perder a sanidade lentamente após a morte de várias pessoas em brinquedos projetados por ele. Ele fez muito por sua família e queria protegê-los. Após a morte de dois membros de sua família, seu filho, Aaron, é a única pessoa que lhe resta.",
     sobre: `
     <h5>Enredo</h5>
     <p>
@@ -610,6 +1503,24 @@ const nickyRoth = {
     `,
 }
 
+const manequim = {
+    dir: "manequim",
+    nome: "Manequim",
+    aparece: "Aparece em: Hello Neighbor Alpha 4 até o jogo completo",
+    previa: "Os manequins são personagens importantes em Hello Neighbor.",
+    sobre: `
+    <h5>Descrição</h5>
+    <p>
+    Os manequins parecem objetos humanoides altos e desfigurados com braços muito longos feitos de metal e madeira, cujo torso é feito de arame, que pode ser visto de baixo. Este modelo, ao contrário do anterior, tem rodas, mas elas não afetam a física do manequim de forma alguma. A cabeça ficou menor e mais estreita, e o torso tem um remendo costurado. No jogo completo, em Fear School e Fear Supermarket, os manequins são inimigos controlados pela IA. Eles podem se mover e tentarão capturar Nicky Roth.
+    </p>
+    <h5>Curiosidades</h5>
+    <ul>
+        <li>Em quase todos Fear Level, os manequins desempenham um papel. Na Fear School, o papel de alunos e professor; no Fear Supermarket, o papel de compradores e caixa; na Fear Factory, o papel de trabalhadores.</li>
+    <ul>
+    `,
+}
+
+
 const crow = {
     dir: "crow",
     nome: "Crow",
@@ -629,32 +1540,730 @@ const crow = {
     `,
 }
 
-const manequim = {
-    dir: "manequim",
-    nome: "Manequim",
-    aparece: "Aparece em: Hello Neighbor Alpha 4 até o jogo completo",
-    previa: `
-    <p>
-    Os manequins são personagens importantes em Hello Neighbor.
-    </p>
-    `,
-    sobre: `
-    <h5>Descrição</h5>
-    <p>
-    Os manequins parecem objetos humanoides altos e desfigurados com braços muito longos feitos de metal e madeira, cujo torso é feito de arame, que pode ser visto de baixo. Este modelo, ao contrário do anterior, tem rodas, mas elas não afetam a física do manequim de forma alguma. A cabeça ficou menor e mais estreita, e o torso tem um remendo costurado. No jogo completo, em Fear School e Fear Supermarket, os manequins são inimigos controlados pela IA. Eles podem se mover e tentarão capturar Nicky Roth.
-    </p>
-    <h5>Curiosidades</h5>
-    <ul>
-        <li>Em quase todos Fear Level, os manequins desempenham um papel. Na Fear School, o papel de alunos e professor; no Fear Supermarket, o papel de compradores e caixa; na Fear Factory, o papel de trabalhadores.</li>
-    <ul>
-    `,
+const theThing = {
+    dir: "the-thing",
+    nome: "The Thing",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
 }
+
+const aaronPeterson = {
+    dir: "aaron-peterson",
+    nome: "Aaron Peterson",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const myaPeterson = {
+    dir: "mya-peterson",
+    nome: "Mya Peterson",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const dianePeterson = {
+    dir: "diane-peterson",
+    nome: "Diane Peterson",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const pessoasDePapelao = {
+    dir: "pessoas-de-papelao",
+    nome: "Pessoas de Papelão",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const zombie = {
+    dir: "zombie",
+    nome: "Zombie",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const trinityBales = {
+    dir: "trinity-bales",
+    nome: "Trinity Bales",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const enzoEsposito = {
+    dir: "enzo-esposito",
+    nome: "Enzo Esposito",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const maritzaEsposito = {
+    dir: "maritza-esposito",
+    nome: "Maritza Esposito",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const ivanTorre = {
+    dir: "ivan-torre",
+    nome: "Ivan Torre",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const delroy = {
+    dir: "delroy",
+    nome: "Delroy",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const finch = {
+    dir: "finch",
+    nome: "Finch",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const theGuest = {
+    dir: "the-guest",
+    nome: "The Guest",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const quentin = {
+    dir: "quentin",
+    nome: "Quentin",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const beatrix = {
+    dir: "beatrix",
+    nome: "Beatrix",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const vandals = {
+    dir: "vandals",
+    nome: "Vandals",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const manInTheHat = {
+    dir: "man-in-the-hat",
+    nome: "Man in the Hat",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const guestKid = {
+    dir: "guest-kid",
+    nome: "Guest Kid",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const pumpkinKid = {
+    dir: "pumpkin-kid",
+    nome: "Pumpkin Kid",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const alienKid = {
+    dir: "alien-kid",
+    nome: "Alien Kid",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const leslieKornwell = {
+    dir: "leslie-kornwell",
+    nome: "Leslie Kornwell",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const keithNielsen = {
+    dir: "keith-nielsen",
+    nome: "Keith Nielsen",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const gerda = {
+    dir: "gerda",
+    nome: "Gerda",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const ottoKinander = {
+    dir: "otto-kinander",
+    nome: "Otto Kinander",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const theMayor = {
+    dir: "the-mayor",
+    nome: "The Mayor",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const theJanitor = {
+    dir: "the-janitor",
+    nome: "The Janitor",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const theLibrarian = {
+    dir: "the-librarian",
+    nome: "The Librarian",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const theForestProtectors = {
+    dir: "the-forest-protectors",
+    nome: "The Forest Protectors",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const intruderProtector = {
+    dir: "intruder-protector",
+    nome: "Intruder Protector",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const forestDweller = {
+    dir: "forest-dweller",
+    nome: "Forest Dweller",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const jacob = {
+    dir: "jacob",
+    nome: "Jacob",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const iris = {
+    dir: "iris",
+    nome: "Iris",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const signed = {
+    dir: "signed",
+    nome: "Signed",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const franklinPeterson = {
+    dir: "franklin-peterson",
+    nome: "Franklin Peterson",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const mrMurtaugh = {
+    dir: "mr-murtaugh",
+    nome: "Mr. Murtaugh",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const sharkotron = {
+    dir: "sharkotron",
+    nome: "Sharkotron",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const turkey = {
+    dir: "turkey",
+    nome: "Turkey",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const imbir = {
+    dir: "imbir",
+    nome: "Imbir",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const skipper = {
+    dir: "skipper",
+    nome: "Skipper",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const gunter = {
+    dir: "gunter",
+    nome: "Gunter",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const clementine = {
+    dir: "clementine",
+    nome: "Clementine",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const brisket = {
+    dir: "brisket",
+    nome: "Brisket",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+const roboDeVigilancia = {
+    dir: "robo-de-vigilancia",
+    nome: "Robo de Vigilância",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+const teste = {
+    dir: "",
+    nome: "",
+    aparece: "",
+    qtdeImagens: 0,
+    qtdeModelos3d: 0,
+    qtdeVideos: 0,
+    qtdeAudios: 0,
+    modelos3d: [],
+    videos: [""],
+    nomeAudios: [""],
+    previa: "",
+    sobre: ``
+}
+*/
 
 const personagens = [
     theodorePeterson,
     nickyRoth,
-    crow,
     manequim,
+    theThing,
+    aaronPeterson,
+    myaPeterson,
+    dianePeterson,
+    pessoasDePapelao,
+    zombie,
+    trinityBales,
+    enzoEsposito,
+    maritzaEsposito,
+    ivanTorre,
+    delroy,
+    finch,
+    theGuest,
+    quentin,
+    beatrix,
+    vandals,
+    manInTheHat,
+    guestKid,
+    pumpkinKid,
+    alienKid,
+    leslieKornwell,
+    keithNielsen,
+    gerda,
+    ottoKinander,
+    theMayor,
+    theJanitor,
+    theLibrarian,
+    theForestProtectors,
+    intruderProtector,
+    forestDweller,
+    jacob,
+    iris,
+    signed,
+    franklinPeterson,
+    mrMurtaugh,
+    crow,
+    sharkotron,
+    turkey,
+    imbir,
+    skipper,
+    gunter,
+    clementine,
+    brisket,
+    roboDeVigilancia,
 ]
 
 let array = personagens

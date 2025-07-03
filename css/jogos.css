@@ -27,6 +27,7 @@ video {
         left: 50%;
         transform: translateX(-50%);
         width: 200px;
+        pointer-events: none;
         z-index: 9;
     }
 
@@ -163,7 +164,7 @@ video {
 
 #indice-jogos {
     display: inline-flex !important;
-    padding: 30px 0 !important;
+    padding: 30px 20px !important;
     width: 80%;
     margin: 0 !important;
 

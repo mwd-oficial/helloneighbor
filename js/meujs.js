@@ -15,7 +15,7 @@ const tutorialBtn = document.querySelector("#tutorial-btn")
 const arBtn = document.querySelector("#ar-btn")
 const playerDiv = document.querySelector("#player-div")
 const loader = document.querySelector("#loader")
-const animacoesInput = document.querySelector("#animacoes-input")
+const animacoes = document.querySelector("#animacoes")
 const carrossel = document.querySelector("#carrossel")
 const imgCarrossel = document.querySelector("#img-carrossel")
 const numImg = document.querySelector("#num-img")
@@ -40,6 +40,8 @@ let timeoutOverflow, timeoutLeiaMenos
 const iconeAnimacoes = document.querySelector("#icone-animacoes")
 const animacoesRange = document.querySelector("#animacoes-range")
 const rotacao = document.querySelector("#rotacao")
+const velocidade = document.querySelector("#velocidade")
+let velocidadeValue
 
 let logado = false
 
@@ -50,7 +52,7 @@ if (localStorage.getItem('logado') === 'true') {
         el.style.display = "none"
     })
     if (bloqueioScroll) bloqueioScroll.style.display = "none"
-    document.body.style.cursor = "url('../images/default-logado.avif'), auto"
+    document.body.style.cursor = "url('images/default-logado.avif'), auto"
 }
 
 const nomeH1 = document.querySelectorAll(".nome-h1")
@@ -75,6 +77,7 @@ if (isDesktop) {
     if (iconeAnimacoes) iconeAnimacoes.classList.add("efeito-hover")
     if (animacoesRange) animacoesRange.classList.add("efeito-hover")
     if (rotacao) rotacao.classList.add("efeito-hover")
+    if (velocidade) velocidade.classList.add("efeito-hover")
     if (setaVoltarTutorial) setaVoltarTutorial.classList.add("efeito-hover")
     if (textoDiv) textoDiv.style.paddingBottom = "100px"
     if (telaCheia) {
@@ -161,7 +164,7 @@ function playConfig(playEl) {
             }
         }
 
-        sombra.addEventListener("mouseenter", () => {
+        sombra.onmouseenter = () => {
             playEl[i].style.opacity = 1
             clearTimeout(timeouts[i])
             timeouts[i] = setTimeout(() => {
@@ -169,35 +172,35 @@ function playConfig(playEl) {
                     playEl[i].style.opacity = 0
                 }
             }, 2000)
-        })
+        }
 
-        sombra.addEventListener("mousemove", (e) => {
+        sombra.onmousemove = (e) => {
             // Evita contar movimento dentro do botão
             if (!playEl[i].contains(e.target)) {
                 showPlay()
             }
-        })
+        }
     })
 
     playEl.forEach((el, i) => {
-        el.addEventListener("mouseenter", () => {
+        el.onmouseenter = () => {
             clearTimeout(timeouts[i])
             playEl[i].style.opacity = 1
-        })
+        }
 
-        el.addEventListener("mouseleave", () => {
+        el.onmouseleave = () => {
             // Quando sair do botão, deixa o botão sumir após 2s (se mouse estiver parado na sombra)
             timeouts[i] = setTimeout(() => {
                 if (!document.querySelectorAll(".sombra")[i].matches(':hover')) {
                     playEl[i].style.opacity = 0
                 }
             }, 2000)
-        })
+        }
     })
 }
 
 let msnry
-window.addEventListener("load", function () {
+window.onload = () => {
     setTimeout(() => {
         pointarCursor(document.querySelector("#ui-to-top"))
         const boxIcon = document.querySelectorAll(".box-icon")
@@ -225,11 +228,11 @@ window.addEventListener("load", function () {
         });
         info(0)
     }
-})
+}
 document.querySelectorAll("a").forEach(el => {
     pointarCursor(el)
-    if (isDesktop) el.addEventListener("mouseover", () => el.style.color = "#ffbb00")
-    el.addEventListener("mouseout", () => el.style.color = "#fff")
+    if (isDesktop) el.onmouseover = () => el.style.color = "#ffbb00"
+    el.onmouseout = () => el.style.color = "#fff"
 })
 document.querySelectorAll(".efeito-hover").forEach(el => {
     pointarCursor(el)
@@ -271,21 +274,21 @@ function exitFullscreen() {
     }
 }
 
-telaCheia.addEventListener("click", function () {
+telaCheia.onclick = () => {
     if (document.fullscreenElement) {
         exitFullscreen()
     } else {
         launchFullscreen()
     }
-})
+}
 
-document.addEventListener("fullscreenchange", function () {
+document.onfullscreenchange = () => {
     if (document.fullscreenElement) {
         telaCheia.innerHTML = "fullscreen_exit"
     } else {
         telaCheia.innerHTML = "fullscreen"
     }
-})
+}
 
 
 
@@ -305,7 +308,7 @@ document.querySelectorAll(".owl-item").forEach(el => {
 
 let logolp = document.querySelector("#logolp")
 let menuAtivo = false
-document.querySelectorAll(".rd-navbar-toggle").forEach(el => el.addEventListener("click", function () {
+document.querySelectorAll(".rd-navbar-toggle").forEach(el => el.onclick = () => {
     if (window.innerWidth < 750) {
         if (menuAtivo) {
             menuAtivo = false
@@ -315,16 +318,16 @@ document.querySelectorAll(".rd-navbar-toggle").forEach(el => el.addEventListener
             logolp.style.opacity = 0
         }
     }
-}))
+})
 
-document.body.addEventListener("click", function (e) {
+document.body.onclick = (e) => {
     if (window.innerWidth < 750) {
         if (menuAtivo && !e.target.closest(".rd-navbar-toggle") && !e.target.closest(".rd-navbar-nav")) {
             menuAtivo = false
             logolp.style.opacity = 1
         }
     }
-})
+}
 
 let estadoVejaMais = false
 document.addEventListener("DOMContentLoaded", function () {
@@ -463,13 +466,13 @@ document.querySelectorAll(".secao-botoes").forEach(el => {
             }
             if (isDesktop) botoes[i].style.overflow = "hidden"
             pointarCursor(botoes[i])
-            botoes[i].addEventListener("click", function () {
+            botoes[i].onclick = () => {
                 if (!logado && i > 2) {
                     alert("Faça login para ter acesso a esse conteúdo!")
                 } else {
                     info(i)
                 }
-            })
+            }
         }, 1);
     })
 })
@@ -498,13 +501,13 @@ function info(indice) {
     if (document.querySelector("#img-div > img")) document.querySelector("#img-div > img").src = `images/${arrayHtml}/${array[iArray].dir}/${array[iArray].dir}.avif`
     document.querySelectorAll(".nome-h1").forEach(el => el.innerHTML = array[iArray].nome)
     document.querySelectorAll(".aparece-p").forEach(el => el.innerHTML = array[iArray].aparece)
-    if (document.querySelector("#previa-div")) document.querySelector("#previa-div").innerHTML = array[iArray].previa
+    if (document.querySelector("#previa-div")) document.querySelector("#previa-div > p").innerHTML = array[iArray].previa
     if (document.querySelector("#sobre-div")) document.querySelector("#sobre-div").innerHTML = array[iArray].sobre
     setTimeout(() => {
         document.querySelectorAll("a").forEach(el => {
             pointarCursor(el)
-            if (isDesktop) el.addEventListener("mouseover", () => el.style.color = "#ffbb00")
-            el.addEventListener("mouseout", () => el.style.color = "#fff")
+            if (isDesktop) el.onmouseover = () => el.style.color = "#ffbb00"
+            el.onmouseout = () => el.style.color = "#fff"
         })
     }, 1);
     if (modelos3dDiv) modelos3dDiv.innerHTML = ""
@@ -591,13 +594,13 @@ function info(indice) {
             audio.addEventListener("canplaythrough", function () {
                 configTempoAudio(i);
             }, { once: true }); // garante que só executa uma vez
-            audio.addEventListener("ended", function () {
+            audio.onended = () => {
                 iconeAudios[i].innerHTML = "play_arrow"
                 audiosRange[i].value = 0
                 audio.currentTime = 0
                 document.querySelectorAll(".tempo-atual")[i].innerHTML = "00:00"
                 clearInterval(intervaloAudios)
-            })
+            }
             if (isDesktop) {
                 iconeAudios[i].classList.add("efeito-hover")
                 pointarCursor(iconeAudios[i])
@@ -628,9 +631,8 @@ function info(indice) {
             })
         }
         document.querySelectorAll(".grid-item>img").forEach((el, i) => {
-            el.addEventListener("click", function () {
-                abrirCarrossel(i)
-            })
+            el.onclick = () => abrirCarrossel(i)
+            
         })
         imagesLoaded(imagensDiv, function () {
             msnry.reloadItems();
@@ -748,7 +750,7 @@ function isModelViewerSupported() {
 
 const modelViewerDiv = document.querySelector('#model-viewer-div')
 const interacoesContainer = document.querySelector("#interacoes-container")
-let modelViewer
+const modelViewer = document.querySelector("model-viewer")
 let iModelo, iAnimacao
 function abrirModelo3d(i) {
     if (!isModelViewerSupported()) {
@@ -759,34 +761,29 @@ function abrirModelo3d(i) {
     arDiv.style.opacity = 0
     arDiv.style.pointerEvents = "none"
 
-    if (document.querySelector("model-viewer")) modelViewerDiv.removeChild(document.querySelector("model-viewer"))
 
-    let el = document.createElement("model-viewer")
-    modelViewerDiv.appendChild(el)
-
-
-    modelViewer = document.querySelector("model-viewer")
-    modelViewer.removeEventListener("load", modeloCarregou)
-    modelViewer.addEventListener("load", modeloCarregou)
+    modelViewer.onload = modeloCarregou
 
     loader.style.opacity = 1
     loader.style.pointerEvents = "all"
     modelViewer.style.opacity = 0
+    modelViewer.style.display = "block"
     interacoesContainer.style.opacity = 0
     arTutorialDiv.style.opacity = 0
 
     modelViewer.src = `models/${arrayHtml}/${array[iArray].dir}/${i}.glb`
-    modelViewer.cameraControls = true
-    modelViewer.autoRotate = true
-    modelViewer.autoRotateDelay = 0
-    modelViewer.rotationPerSecond = "0deg"
-    rotacao.value = 0
 
-    animacoesInput.innerHTML = ""
+    modelViewer.rotationPerSecond = "0deg"
+    modelViewer.interactionPromptStyle = "wiggle"
+
+    rotacao.value = 0
+    velocidade.value = 1
+
+    animacoes.innerHTML = ""
     iAnimacao = 0
     array[iArray].modelos3d[i].forEach((animacao, ianim) => {
         let opt = document.createElement("option")
-        animacoesInput.appendChild(opt)
+        animacoes.appendChild(opt)
         opt.innerHTML = animacao.nome
         opt.value = ianim
     })
@@ -805,12 +802,15 @@ function abrirModelo3d(i) {
     if (array[iArray].modelos3d[i].length == 1) {
         if (array[iArray].modelos3d[i][0].src) {
             playerDiv.style.display = "flex"
+            document.querySelector("#velocidade-div").style.display = "flex"
         } else {
             playerDiv.style.display = "none"
+            document.querySelector("#velocidade-div").style.display = "none"
         }
         document.querySelector("#animacoes-div").style.display = "none"
     } else {
         document.querySelector("#animacoes-div").style.display = "flex"
+        document.querySelector("#velocidade-div").style.display = "flex"
         playerDiv.style.display = "flex"
     }
 
@@ -824,6 +824,9 @@ function abrirModelo3d(i) {
 
 let intervaloModeloPronto
 fecharModelo3d?.addEventListener("click", function () {
+    setTimeout(() => {
+        modelViewer.style.display = "none"
+    }, 250);
     modelViewerDiv.style.opacity = 0;
     modelViewerDiv.style.pointerEvents = "none";
     tutorialDiv.style.opacity = 0;
@@ -876,7 +879,12 @@ function configTempo() {
     iconeAnimacoes.innerHTML = "pause"
 
     modelViewer.animationName = array[iArray].modelos3d[iModelo][iAnimacao].src
+    modelViewer.timeScale = array[iArray].modelos3d[iModelo][0]?.speed ?? 1
     modelViewer.play()
+
+    document.querySelector("#velocidade-div span").innerHTML = "1"
+    velocidade.value = 1
+    velocidadeValue = modelViewer.timeScale
 
 
     // Pega a duração da animação e define no mostrador
@@ -892,12 +900,21 @@ function configTempo() {
 
 
     // Atualiza o tempo atual da animação quando o usuário mudar no range
-    animacoesRange.addEventListener('input', function () {
+    animacoesRange.oninput = () => {
+        modelViewer.timeScale = 1
+        modelViewer.pause()
         modelViewer.currentTime = animacoesRange.value;
-    });
+    }
+    animacoesRange.onmouseup = () => {
+        if (iconeAnimacoes.innerHTML == "pause") modelViewer.play()
+        modelViewer.timeScale = velocidadeValue
+    }
+    animacoesRange.ontouchend = () => {
+        if (iconeAnimacoes.innerHTML == "pause") modelViewer.play()
+        modelViewer.timeScale = velocidadeValue
+    }
 
-    iconeAnimacoes.removeEventListener("click", playPauseAnimacao)
-    iconeAnimacoes.addEventListener("click", playPauseAnimacao)
+    iconeAnimacoes.onclick = playPauseAnimacao
 }
 
 function contadorAnimacoes() {
@@ -910,11 +927,13 @@ function contadorAnimacoes() {
 function configModel() {
     let animacao = array[iArray].modelos3d[iModelo][iAnimacao]
     modelViewer.rotationPerSecond = "0deg"
+    modelViewer.resetTurntableRotation()
 
-    modelViewer.cameraTarget = animacao?.target
+    modelViewer.cameraTarget = animacao?.target ?? "0 0 0"
     modelViewer.cameraOrbit = animacao?.orbit
     modelViewer.minCameraOrbit = animacao?.minOrbit ?? array[iArray].modelos3d[iModelo][0]?.minOrbit
     modelViewer.maxCameraOrbit = animacao?.maxOrbit ?? array[iArray].modelos3d[iModelo][0]?.maxOrbit
+    modelViewer.timeScale = array[iArray].modelos3d[iModelo][0]?.speed ?? 1
 }
 
 function playPauseAnimacao() {
@@ -940,13 +959,18 @@ function configTempoAudio(i) {
     audiosRange[i].max = audios[i].duration
 
     // Atualiza o tempo atual da animação quando o usuário mudar no range
-    audiosRange[i].addEventListener('input', function () {
+    audiosRange[i].oninput = () => {
+        audios[i].pause()
         audios[i].currentTime = audiosRange[i].value;
-    });
+    };
+    audiosRange[i].onmouseup = () => {
+        if (iconeAudios[i].innerHTML == "pause") audios[i].play()
+    }
+    audiosRange[i].ontouchend = () => {
+        if (iconeAudios[i].innerHTML == "pause") audios[i].play()
+    }
 
-    iconeAudios[i].addEventListener("click", function () {
-        playPauseAudio(i)
-    })
+    iconeAudios[i].onclick = () => playPauseAudio(i)
 }
 
 let intervaloAudios
@@ -1116,9 +1140,9 @@ setaVoltarAr?.addEventListener("click", function () {
 
 
 
-animacoesInput?.addEventListener("input", function () {
+animacoes?.addEventListener("input", function () {
     modeloPronto = false
-    iAnimacao = animacoesInput.value
+    iAnimacao = animacoes.value
     let animacao = array[iArray].modelos3d[iModelo][iAnimacao]
     modelViewer.animationName = animacao.src
     configModel()
@@ -1127,17 +1151,26 @@ animacoesInput?.addEventListener("input", function () {
 
 
 rotacao?.addEventListener("input", function () {
-    document.querySelector("model-viewer").rotationPerSecond = rotacao.value + "deg"
+    modelViewer.rotationPerSecond = rotacao.value + "deg"
+    if (rotacao.value > 0) {
+        modelViewer.interactionPromptStyle = "basic"
+    } else {
+        modelViewer.interactionPromptStyle = "wiggle"
+    }
+})
+
+velocidade?.addEventListener("input", function () {
+    velocidadeValue = (array[iArray].modelos3d[iModelo][0]?.speed ?? 1) * Number(velocidade.value);
+    modelViewer.timeScale = velocidadeValue
+    document.querySelector("#velocidade-div span").innerHTML = velocidade.value
 })
 
 
 
 
 
-
-
 leiaMaisBtn.forEach((el, i) => {
-    el.addEventListener("click", function () {
+    el.onclick = () => {
         clearTimeout(timeoutOverflow)
         clearTimeout(timeoutLeiaMenos)
         leiaMaisEl[i].style.display = "block"
@@ -1155,13 +1188,13 @@ leiaMaisBtn.forEach((el, i) => {
         setTimeout(() => {
             leiaMaisEl[i].style.opacity = 1
         }, 1);
-    })
+    }
 })
 
 leiaMenosBtn.forEach((el, i) => {
-    el.addEventListener("click", function () {
+    el.onclick = () => {
         lerMenos(i)
-    })
+    }
 })
 
 function lerMenos(i) {
@@ -1184,22 +1217,17 @@ function lerMenos(i) {
 }
 
 leiaMaisBtn.forEach(el => {
-    el.addEventListener("mouseleave", function () {
-        el.style.backgroundColor = "#fff !important"
-    })
+    el.onmouseleave = () => el.style.backgroundColor = "#fff !important"
 })
+
 leiaMenosBtn.forEach(el => {
-    el.addEventListener("mouseleave", function () {
-        el.style.backgroundColor = "#fff !important"
-    })
+    el.onmouseleave = () => el.style.backgroundColor = "#fff !important"
 })
 
 
 let tutorialVideo = document.querySelector("#tutorial-video")
 if (tutorialVideo) {
-    tutorialVideo.addEventListener("click", function () {
-        document.querySelector("#play-tutorial").style.display = "none"
-    });
+    tutorialVideo.onclick = () => document.querySelector("#play-tutorial").style.display = "none"
 }
 
 // Atalho

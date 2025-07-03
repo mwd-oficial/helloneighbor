@@ -157,7 +157,7 @@
             <hr class="divider hrs bg-red hr-md-left-0">
             <div id="texto-div">
               <h3 id="sobre">Sobre</h3>
-              <div id="previa-div" style="margin-bottom: 15px;"></div>
+              <div id="previa-div" style="margin-bottom: 15px;"><p></p></div>
               <div style="position: relative; width: 100%;">
                 <button class="leia-mais-btn btn offset-top-10 offset-lg-top-0 btn-danger"
                   style="position: absolute; top: 0; left: 50%; transform: translate(-50%, 50%);">Leia mais</button>
@@ -193,6 +193,7 @@
       </div>
     </section>
     <div id="model-viewer-div">
+      <model-viewer camera-controls auto-rotate auto-rotate-delay="0" rotation-per-second="0deg" reveal="auto" poster="none"></model-viewer>
       <div id="loader">
         <img src="images/loader.gif" alt="">
       </div>
@@ -242,14 +243,19 @@
       <div id="interacoes-container">
         <div id="animacoes-rotacao-div">
           <div id="animacoes-div">
-            <label for="animacoes-input">Animações:</label>
-            <select name="" id="animacoes-input"></select>
+            <label for="animacoes">Animações:</label>
+            <select name="" id="animacoes"></select>
           </div>
           <div id="rotacao-div">
             <label for="rotacao">Rotação automática:</label>
             <span>0%</span>
             <input type="range" name="" id="rotacao" min="0" max="360" step="0.1" value="0">
             <span>100%</span>
+          </div>
+          <div id="velocidade-div">
+            <label for="velocidade">Velocidade da animação:</label>
+            <input type="range" name="" id="velocidade" min="-2" max="2" step="0.01" value="1">
+            <span>1</span>
           </div>
         </div>
         <div id="player-div">
