@@ -775,6 +775,7 @@ function abrirModelo3d(i) {
 
     modelViewer.rotationPerSecond = "0deg"
     modelViewer.interactionPromptStyle = "wiggle"
+    modelViewer.resetInteractionPrompt()
 
     rotacao.value = 0
     velocidade.value = 1

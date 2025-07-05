@@ -853,6 +853,10 @@ p {
 
 		/* background-color: #D6D6D6;
 		z-index: 99999999999 !important;  */
+
+		&::part(default-progress-bar) {
+            opacity: 0;
+        }
 	}
 
 	& #ar-tutorial-div {
