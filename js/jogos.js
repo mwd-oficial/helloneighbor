@@ -3,16 +3,20 @@ const divVideo = document.querySelectorAll(".div-video");
 const videos = document.querySelectorAll(".videos")
 let iVideo = 0
 let divVideosVisiveis = []
+let timeoutPause = []
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         let i = entry.target.dataset.index
         if (entry.isIntersecting) {
+            clearTimeout(timeoutPause[i]);
             videos[i].play()
             videosFixed[i].play()
         } else {
-            videos[i].pause()
-            videosFixed[i].pause()
+            timeoutPause[i] = setTimeout(() => {
+                if (!videos[i].paused) videos[i].pause()
+                if (!videosFixed[i].paused) videosFixed[i].pause()
+            }, 1000);
         }
     });
 }, {
@@ -87,13 +91,13 @@ window.addEventListener("load", function () {
 })
 
 play.forEach((el, i) => {
-    el.addEventListener("click", function() {
+    el.addEventListener("click", function () {
         darPlay(i)
     })
 })
 
 playFixed.forEach((el, i) => {
-    el.addEventListener("click", function() {
+    el.addEventListener("click", function () {
         darPlay(i)
     })
 })

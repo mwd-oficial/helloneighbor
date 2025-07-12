@@ -43,6 +43,11 @@ const rotacao = document.querySelector("#rotacao")
 const velocidade = document.querySelector("#velocidade")
 let velocidadeValue
 
+const skybox = document.querySelector("#skybox")
+let iHdr
+let iHdrAntigo = -1
+let modeloCarregado = false
+
 let logado = false
 
 if (localStorage.getItem('logado') === 'true') {
@@ -632,7 +637,7 @@ function info(indice) {
         }
         document.querySelectorAll(".grid-item>img").forEach((el, i) => {
             el.onclick = () => abrirCarrossel(i)
-            
+
         })
         imagesLoaded(imagensDiv, function () {
             msnry.reloadItems();
@@ -766,16 +771,14 @@ function abrirModelo3d(i) {
 
     loader.style.opacity = 1
     loader.style.pointerEvents = "all"
-    modelViewer.style.opacity = 0
     modelViewer.style.display = "block"
-    interacoesContainer.style.opacity = 0
-    arTutorialDiv.style.opacity = 0
 
     modelViewer.src = `models/${arrayHtml}/${array[iArray].dir}/${i}.glb`
+    modeloCarregado = false
+    efeitoSkybox(true)
 
     modelViewer.rotationPerSecond = "0deg"
     modelViewer.interactionPromptStyle = "wiggle"
-    modelViewer.resetInteractionPrompt()
 
     rotacao.value = 0
     velocidade.value = 1
@@ -830,16 +833,19 @@ fecharModelo3d?.addEventListener("click", function () {
     }, 250);
     modelViewerDiv.style.opacity = 0;
     modelViewerDiv.style.pointerEvents = "none";
+    modelViewer.style.opacity = 0
     tutorialDiv.style.opacity = 0;
     tutorialDiv.style.pointerEvents = "none";
     setaVoltarTutorial.style.opacity = 0;
     setaVoltarTutorial.style.pointerEvents = "none";
     arDiv.style.opacity = 0;
     arDiv.style.pointerEvents = "none";
+    arTutorialDiv.style.opacity = 0
     loader.style.opacity = 0
     loader.style.pointerEvents = "none"
     setaVoltarAr.style.opacity = 0;
     setaVoltarAr.style.pointerEvents = "none";
+    interacoesContainer.style.opacity = 0
     fecharModelo3d.style.display = "none"
     if (document.querySelector("#ui-to-top")) document.querySelector("#ui-to-top").style.display = "block"
     document.body.style.overflowY = "scroll"
@@ -860,6 +866,7 @@ const tempoTotalAnimacoes = document.querySelector("#tempo-total-animacoes")
 const tempoAtualAnimacoes = document.querySelector("#tempo-atual-animacoes")
 
 function modeloCarregou() {
+    modeloCarregado = true
     console.log(modelViewer.availableAnimations)
     configModel()
 
@@ -873,6 +880,13 @@ function modeloCarregou() {
         loader.style.pointerEvents = "none"
     }, 1000);
 }
+
+modelViewer.addEventListener('environment-change', () => {
+    if (modeloCarregado) {
+        loader.style.opacity = 0
+        loader.style.pointerEvents = "none"
+    }
+});
 
 let intervaloAnimacoes
 function configTempo() {
@@ -1074,10 +1088,11 @@ arBtn?.addEventListener("click", async function () {
             console.log("tem mais de 1 animação")
             try {
                 const res = await axios.post(`${API_URL}/ar/cadastrar`, {
-                    driveId: array[iArray].modelos3d[iModelo][0].driveId,
-                    animacao: array[iArray].modelos3d[iModelo][iAnimacao].src,
                     username: "Anônimo",
+                    driveId: array[iArray].modelos3d[iModelo][0].driveId,
                     nome: `${array[iArray].dir}`,
+                    nomeAnimacao: array[iArray].modelos3d[iModelo][iAnimacao].nome,
+                    animacao: array[iArray].modelos3d[iModelo][iAnimacao].src,
                     timestamp: timestamp
                 });
                 setTimeout(() => {
@@ -1091,6 +1106,14 @@ arBtn?.addEventListener("click", async function () {
         } else {
             url = `https://drive.google.com/uc?export=download&id=${array[iArray].modelos3d[iModelo][0].driveId}`
             modeloPronto = true
+            try {
+                await axios.post(`${API_URL}/ar/postar`, {
+                    username: "Anônimo",
+                    nome: `${array[iArray].dir}`,
+                });
+            } catch (e) {
+                console.log("Um erro ocorreu ao tentar cadastrar modelo estático.")
+            }
         }
     } else {
         alert("Esse modelo 3D não está disponível para o modo AR.")
@@ -1167,7 +1190,25 @@ velocidade?.addEventListener("input", function () {
 })
 
 
-
+document.querySelector("#skybox-p").onclick = () => efeitoSkybox(!skybox.classList.contains("active"))
+skybox.onclick = () => efeitoSkybox(!skybox.classList.contains("active"))
+function efeitoSkybox(estado) {
+    if (estado) {
+        do {
+            iHdr = Math.floor(Math.random() * 10)
+        } while (iHdr == iHdrAntigo)
+        iHdrAntigo = iHdr
+        skybox.classList.add("active");
+        modelViewer.skyboxImage = `images/hdr/hdr${iHdr}.avif`
+        modelViewer.environmentImage = "images/hdr/branco.avif"
+        loader.style.opacity = 1
+        loader.style.pointerEvents = "all"
+    } else {
+        skybox.classList.remove("active");
+        modelViewer.skyboxImage = ""
+        modelViewer.environmentImage = "neutral"
+    }
+}
 
 
 leiaMaisBtn.forEach((el, i) => {

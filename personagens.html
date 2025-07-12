@@ -25,7 +25,7 @@
 
 <body>
   <div class="page-loader page-loader-variant-1">
-    <div><img width='150' src='images/logop.avif' alt='' />
+    <div><img width='150' src='images/logos/logop.avif' alt='' />
       <div class="offset-top-41 text-center">
         <div class="spinner"></div>
       </div>
@@ -73,16 +73,17 @@
               <button class="rd-navbar-top-panel-toggle"
                 data-rd-navbar-toggle=".rd-navbar, .rd-navbar-top-panel"><span></span></button>
               <!--Navbar Brand-->
-              <div class="rd-navbar-brand"><a href="index.html"><img width='150' src='images/logol.avif' alt='' /></a>
+              <div class="rd-navbar-brand"><a href="index.html"><img width='150' src='images/logos/logol.avif'
+                    alt='' /></a>
               </div>
             </div>
-            <a href="index.html" id="logolp"><img width='200' src='images/logolp.avif' alt='' /></a>
+            <a href="index.html" id="logolp"><img width='200' src='images/logos/logolp.avif' alt='' /></a>
             <div class="rd-navbar-menu-wrap">
               <div class="rd-navbar-nav-wrap">
                 <div class="rd-navbar-mobile-scroll">
                   <!--Navbar Brand Mobile-->
-                  <div class="rd-navbar-mobile-brand"><a href="index.html"><img width='150' src='images/logol.avif'
-                        alt='' /></a></div>
+                  <div class="rd-navbar-mobile-brand"><a href="index.html"><img width='150'
+                        src='images/logos/logol.avif' alt='' /></a></div>
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
                     <li><a href="index.html"><span>Início</span></a></li>
@@ -157,7 +158,9 @@
             <hr class="divider hrs bg-red hr-md-left-0">
             <div id="texto-div">
               <h3 id="sobre">Sobre</h3>
-              <div id="previa-div" style="margin-bottom: 15px;"><p></p></div>
+              <div id="previa-div" style="margin-bottom: 15px;">
+                <p></p>
+              </div>
               <div style="position: relative; width: 100%;">
                 <button class="leia-mais-btn btn offset-top-10 offset-lg-top-0 btn-danger"
                   style="position: absolute; top: 0; left: 50%; transform: translate(-50%, 50%);">Leia mais</button>
@@ -193,9 +196,8 @@
       </div>
     </section>
     <div id="model-viewer-div">
-      <model-viewer camera-controls auto-rotate auto-rotate-delay="0" rotation-per-second="0deg" reveal="auto" poster="none">
-        <img src="images/mao.avif" slot="interaction-prompt" alt="">
-      </model-viewer>
+      <model-viewer camera-controls auto-rotate auto-rotate-delay="0" rotation-per-second="0deg" reveal="auto"
+        poster="none"></model-viewer>
       <div id="loader">
         <img src="images/loader.gif" alt="">
       </div>
@@ -204,10 +206,12 @@
         <h2>Tutorial</h2>
         <h5>Como interagir com o modelo 3D</h5>
         <div>
-          <video src="videos/tutorial.mp4" poster="videos/tutorial.avif" preload="auto" controls id="tutorial-video"></video>
+          <video src="videos/tutorial.mp4" poster="videos/tutorial.avif" preload="auto" controls
+            id="tutorial-video"></video>
           <div id="play-tutorial"><span class="material-symbols-outlined">play_arrow</span></div>
         </div>
-        <video src="videos/tutorial-cel.mp4" poster="videos/tutorial-cel.avif" preload="auto" controls id="tutorial-video-celular"></video>
+        <video src="videos/tutorial-cel.mp4" poster="videos/tutorial-cel.avif" preload="auto" controls
+          id="tutorial-video-celular"></video>
       </div>
       <span class="material-symbols-rounded" id="seta-voltar-ar">west</span>
       <div id="ar-div">
@@ -215,9 +219,11 @@
         <h5>Requisitos para acessar o modo <br> AR (Realidade Aumentada)</h5>
         <ol>
           <li>Dispositivo compatível com Google Play Services for AR (ARCore). Verifique a lista de dispositivos
-            compatíveis <a target="_blank" href="https://developers.google.com/ar/discover/supported-devices">aqui</a>. Caso não seja, tente em outro dispositivo móvel.</li>
-          <li style="margin-bottom: 0;">ARCore instalado. Caso ainda não tenha, baixe ele diretamente pela Play Store <a target="_blank"
-              href="https://play.google.com/store/apps/details?id=com.google.ar.core">aqui</a> ou clique em instalar abaixo.
+            compatíveis <a target="_blank" href="https://developers.google.com/ar/discover/supported-devices">aqui</a>.
+            Caso não seja, tente em outro dispositivo móvel.</li>
+          <li style="margin-bottom: 0;">ARCore instalado. Caso ainda não tenha, baixe ele diretamente pela Play Store <a
+              target="_blank" href="https://play.google.com/store/apps/details?id=com.google.ar.core">aqui</a> ou clique
+            em instalar abaixo.
           </li>
 
           <a target="_blank" href="https://play.google.com/store/apps/details?id=com.google.ar.core"><img
@@ -259,6 +265,10 @@
             <input type="range" name="" id="velocidade" min="-2" max="2" step="0.01" value="1">
             <span>1</span>
           </div>
+          <div id="skybox-div">
+            <p id="skybox-p">Imagem de fundo:</p>
+            <div id="skybox" class="active"></div>
+          </div>
         </div>
         <div id="player-div">
           <span class="material-symbols-outlined" id="icone-animacoes">pause</span>
@@ -277,25 +287,25 @@
       <div>
         <p>Site desenvolvido por:</p>
         <a href="https://mwd-oficial.github.io/sobre" target="_blank">
-          <img src="images/logomwd.avif" alt="" style="width: 100px;">
+          <img src="images/logos/logomwd.avif" alt="" style="width: 100px;">
         </a>
       </div>
       <div>
         <p>Site oficial:</p>
         <a href="https://helloneighborgame.com/" target="_blank">
-          <img src="images/logop.avif" alt="" style="width: 100px;">
+          <img src="images/logos/logop.avif" alt="" style="width: 100px;">
         </a>
       </div>
       <div>
         <p>Site da tinyBuild:</p>
         <a href="https://www.tinybuild.com/" target="_blank">
-          <img src="images/tiny-build.avif" alt="" style="width: 135px;">
+          <img src="images/logos/tiny-build.avif" alt="" style="width: 135px;">
         </a>
       </div>
       <div>
         <p>Wiki oficial:</p>
         <a href="https://hello-neighbor.fandom.com/wiki/Hello_Neighbor_Wiki" target="_blank">
-          <img src="images/wiki-oficial.avif" alt="" style="width: 165px;">
+          <img src="images/logos/wiki-oficial.avif" alt="" style="width: 165px;">
         </a>
       </div>
     </footer>
