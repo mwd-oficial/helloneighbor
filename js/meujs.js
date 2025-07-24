@@ -374,7 +374,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const targetId = this.getAttribute("href")
                 const targetElement = document.querySelector(targetId);
-                const i = targetId.charAt(targetId.length - 1);
+               const i = targetId.match(/\d+$/)?.[0]; // extrai "10" corretamente de "#sobre10"
+
 
                 if (targetElement) {
                     if (this.classList.contains("link-jogos")) {
