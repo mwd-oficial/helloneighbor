@@ -881,7 +881,7 @@ function modeloCarregou() {
     }, 1000);
 }
 
-modelViewer.addEventListener('environment-change', () => {
+modelViewer?.addEventListener('environment-change', () => {
     if (modeloCarregado) {
         loader.style.opacity = 0
         loader.style.pointerEvents = "none"
@@ -1190,8 +1190,8 @@ velocidade?.addEventListener("input", function () {
 })
 
 
-document.querySelector("#skybox-p").onclick = () => efeitoSkybox(!skybox.classList.contains("active"))
-skybox.onclick = () => efeitoSkybox(!skybox.classList.contains("active"))
+document.querySelector("#skybox-p")?.addEventListener("click", () => efeitoSkybox(!skybox.classList.contains("active")))
+skybox?.addEventListener("click", () => efeitoSkybox(!skybox.classList.contains("active")))
 function efeitoSkybox(estado) {
     if (estado) {
         do {
