@@ -10,7 +10,7 @@ const theodorePeterson = {
         // 0
         [
             {
-                driveId: "1Q4ROyrzvlERbm8N00BcbARxkKpCdkBO4",
+                temAr: true,
                 orbit: "90deg 0 0",
                 minOrbit: "0 0 10m",
                 maxOrbit: "0 0 12.5m",
@@ -19,7 +19,7 @@ const theodorePeterson = {
         // 1
         [
             {
-                driveId: "19CJNHEyf5Vk2c86T9TyqZ5WoZLLbJ6Do",
+                temAr: true,
                 minOrbit: "0 0 350m",
                 maxOrbit: "0 0 425m",
             }
@@ -138,7 +138,7 @@ const theodorePeterson = {
         // 4
         [
             {
-                driveId: "1MdcP-YQ_H0rngdn_L0qX5Bkjlb6KbTa0",
+                temAr: true,
                 minOrbit: "0 0 3m",
                 maxOrbit: "0 0 4.5m",
             }
@@ -153,35 +153,35 @@ const theodorePeterson = {
         // 6
         [
             {
-                driveId: "1pSaFICYpPQYhJXIdWYoFkAvn1DXf0oJJ",
+                temAr: true,
                 minOrbit: "0 0 300m",
             }
         ],
         // 7
         [
             {
-                driveId: "16p74EmqMcic1ZxSpYOvja7Hq31bGT1du",
+                temAr: true,
                 minOrbit: "0 0 5m",
             }
         ],
         // 8
         [
             {
-                driveId: "1_seeGcurpWIhBMhFghVygApEJlXhl7kr",
+                temAr: true,
                 minOrbit: "0 0 300m",
             }
         ],
         // 9
         [
             {
-                driveId: "1ZhAlQfBL-6PoWgfgdbE503bAuyrQJ4VZ",
+                temAr: true,
                 minOrbit: "0 0 300m",
             }
         ],
         // 10
         [
             {
-                driveId: "1jYpYCgrUaTWXFuTfgqdLks1E7WpXMtHR",
+                temAr: true,
                 minOrbit: "0 0 350m",
                 maxOrbit: "0 0 435m",
             }
@@ -196,7 +196,7 @@ const theodorePeterson = {
         // 12
         [
             {
-                driveId: "1UfRQk0BKmBNgUJv_BuQUq4yafLIhjTa2",
+                temAr: true,
                 minOrbit: "0 0 3m",
                 maxOrbit: "0 0 4.5m",
             }
@@ -204,7 +204,7 @@ const theodorePeterson = {
         // 13
         [
             {
-                driveId: "1ek1bqVt_mRldBblK1yNUQyft6Qo_ZERZ",
+                temAr: true,
                 src: "A_Neighbor_Calm_Idle_SK_Neighbor_Body",
                 nome: "Parado",
                 minOrbit: "0 0 3m",
@@ -268,7 +268,7 @@ const theodorePeterson = {
         // 14
         [
             {
-                driveId: "1yB8wTMei82pbl_ud_m1c9d_IOcp59Z_7",
+                temAr: true,
                 src: "Animation",
                 maxOrbit: "0 0 6.5m",
                 target: "0m 1.375m -0.25m",
@@ -277,7 +277,7 @@ const theodorePeterson = {
         // 15
         [
             {
-                driveId: "1bKUap_bgULe0m7myvPnQwkK71UVdN0er",
+                temAr: true,
                 src: "Animation",
                 minOrbit: "0 0 4m",
             }
@@ -285,7 +285,7 @@ const theodorePeterson = {
         // 16
         [
             {
-                driveId: "1v0ja5csjVlDylFf3JeioOgw4j1HKpYTx",
+                temAr: true,
                 src: "Animation",
                 orbit: "-45deg 70deg 0",
                 minOrbit: "0 0 4m",
@@ -294,7 +294,7 @@ const theodorePeterson = {
         // 17
         [
             {
-                driveId: "1pNTj54wJ3U7-ZeNqpp1vsnueas-4Spkg",
+                temAr: true,
                 src: "Animation",
                 minOrbit: "0 0 4.5m",
                 maxOrbit: "0 0 5m",
@@ -304,7 +304,7 @@ const theodorePeterson = {
         // 18
         [
             {
-                driveId: "1CJObAZZhySqziiWEUwmL9uv9mEVhBc-K",
+                temAr: true,
                 src: "Animation",
                 orbit: "120deg 70deg 0",
             }
@@ -1217,7 +1217,7 @@ const theodorePeterson = {
         // 20
         [
             {
-                driveId: "1ccu8Ae4NSznQkPcjpRCJXqQlfbKEpRD7",
+                temAr: true,
                 src: "A_Neighbor_Idle",
                 nome: "Parado",
                 minOrbit: "0 0 3m",

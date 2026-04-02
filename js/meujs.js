@@ -1069,8 +1069,8 @@ arBtn?.addEventListener("click", async function () {
         return
     }
 
-    if (array[iArray].modelos3d[iModelo][0].driveId) {
-        console.log("tem driveId")
+    if (array[iArray].modelos3d[iModelo][0].temAr) {
+        console.log("tem ar")
         const timestamp = new Date().toISOString();
         arDiv.style.opacity = 1
         arDiv.style.pointerEvents = "all"
@@ -1090,14 +1090,14 @@ arBtn?.addEventListener("click", async function () {
             try {
                 const res = await axios.post(`${API_URL}/ar/cadastrar`, {
                     username: "Anônimo",
-                    driveId: array[iArray].modelos3d[iModelo][0].driveId,
+                    src:  modelViewer.src,
                     nome: `${array[iArray].dir}`,
                     nomeAnimacao: array[iArray].modelos3d[iModelo][iAnimacao].nome,
                     animacao: array[iArray].modelos3d[iModelo][iAnimacao].src,
                     timestamp: timestamp
                 });
                 setTimeout(() => {
-                    url = `https://drive.google.com/uc?export=download&id=${res.data.newDriveId}`
+                    url = res.data.blobUrl
                     modeloPronto = true
                 }, 1000);
             } catch (e) {
@@ -1105,15 +1105,21 @@ arBtn?.addEventListener("click", async function () {
                 return
             }
         } else {
-            url = `https://drive.google.com/uc?export=download&id=${array[iArray].modelos3d[iModelo][0].driveId}`
-            modeloPronto = true
+            console.log("é estatico, apenas 1 animação")
             try {
-                await axios.post(`${API_URL}/ar/postar`, {
-                    username: "Anônimo",
-                    nome: `${array[iArray].dir}`,
+                const res = await axios.post(`${API_URL}/ar/cadastrar`, {
+                    username: dadosUser.username || "Anônimo",
+                    src:  modelViewer.src,
+                    nome: nomeModelo.innerHTML,
+                    timestamp: timestamp
                 });
+                setTimeout(() => {
+                    url = res.data.blobUrl
+                    modeloPronto = true
+                }, 1000);
             } catch (e) {
                 console.log("Um erro ocorreu ao tentar cadastrar modelo estático.")
+                return
             }
         }
     } else {
