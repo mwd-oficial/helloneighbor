@@ -11,6 +11,7 @@ const logoJogosFixed = document.querySelectorAll(".logo-jogos-fixed")
 const arTutorialDiv = document.querySelector("#ar-tutorial-div")
 const setaVoltarTutorial = document.querySelector("#seta-voltar-tutorial")
 const setaVoltarAr = document.querySelector("#seta-voltar-ar")
+const maximizarBtn = document.querySelector("#maximizar-btn")
 const tutorialBtn = document.querySelector("#tutorial-btn")
 const arBtn = document.querySelector("#ar-btn")
 const playerDiv = document.querySelector("#player-div")
@@ -78,6 +79,7 @@ if (isDesktop) {
     document.querySelectorAll("#indice a").forEach(el => el.classList.add("efeito-hover"))
     document.querySelectorAll(".swiper-button").forEach(el => el.classList.add("efeito-hover"))
     document.querySelectorAll("input").forEach(el => el.classList.add("efeito-hover"))
+    if (maximizarBtn) maximizarBtn.classList.add("efeito-hover")
     if (tutorialBtn) tutorialBtn.classList.add("efeito-hover")
     if (iconeAnimacoes) iconeAnimacoes.classList.add("efeito-hover")
     if (animacoesRange) animacoesRange.classList.add("efeito-hover")
@@ -374,7 +376,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const targetId = this.getAttribute("href")
                 const targetElement = document.querySelector(targetId);
-               const i = targetId.match(/\d+$/)?.[0]; // extrai "10" corretamente de "#sobre10"
+                const i = targetId.match(/\d+$/)?.[0]; // extrai "10" corretamente de "#sobre10"
 
 
                 if (targetElement) {
@@ -829,6 +831,10 @@ function abrirModelo3d(i) {
 
 let intervaloModeloPronto
 fecharModelo3d?.addEventListener("click", function () {
+    document.querySelectorAll("video").forEach(video => {
+        video.pause()
+        video.currentTime = 0
+    })
     setTimeout(() => {
         modelViewer.style.display = "none"
     }, 250);
@@ -1023,6 +1029,36 @@ function contadorAudios(i) {
     document.querySelectorAll(".tempo-atual")[i].innerHTML = (minutos < 10 ? "0" + minutos : minutos) + ":" + (segundos < 10 ? "0" + segundos : segundos);
 }
 
+maximizarBtn?.addEventListener("click", function () {
+    if (maximizarBtn.querySelector("span").innerHTML == "close_fullscreen") {
+        maximizarBtn.querySelector("span").innerHTML = "open_in_full"
+        maximizarBtn.style.opacity = 1
+        fecharModelo3d.style.display = "flex"
+        tutorialBtn.style.display = "flex"
+        arBtn.style.display = "flex"
+        interacoesContainer.style.display = "flex"
+        requestAnimationFrame(() => {
+            fecharModelo3d.style.opacity = 1
+            tutorialBtn.style.opacity = 1
+            arBtn.style.opacity = 1
+            interacoesContainer.style.opacity = 1
+        })
+    } else {
+        maximizarBtn.querySelector("span").innerHTML = "close_fullscreen"
+        maximizarBtn.style.opacity = 0.25
+        fecharModelo3d.style.opacity = 0
+        tutorialBtn.style.opacity = 0
+        arBtn.style.opacity = 0
+        interacoesContainer.style.opacity = 0
+        setTimeout(() => {
+            fecharModelo3d.style.display = "none"
+            tutorialBtn.style.display = "none"
+            arBtn.style.display = "none"
+            interacoesContainer.style.display = "none"
+        }, 500);
+    }
+})
+
 tutorialBtn?.addEventListener("click", function () {
     tutorialDiv.style.opacity = 1
     tutorialDiv.style.pointerEvents = "all"
@@ -1046,7 +1082,7 @@ setaVoltarTutorial?.addEventListener("click", function () {
         video.currentTime = 0
     })
     setTimeout(() => {
-        document.querySelector("#play-tutorial").style.display = "flex"
+        if (isDesktop) document.querySelector("#play-tutorial").style.display = "flex"
     }, 250);
 })
 
@@ -1090,7 +1126,7 @@ arBtn?.addEventListener("click", async function () {
             try {
                 const res = await axios.post(`${API_URL}/ar/cadastrar`, {
                     username: "Anônimo",
-                    src:  modelViewer.src,
+                    src: modelViewer.src,
                     nome: `${array[iArray].dir}`,
                     nomeAnimacao: array[iArray].modelos3d[iModelo][iAnimacao].nome,
                     animacao: array[iArray].modelos3d[iModelo][iAnimacao].src,
@@ -1109,7 +1145,7 @@ arBtn?.addEventListener("click", async function () {
             try {
                 const res = await axios.post(`${API_URL}/ar/cadastrar`, {
                     username: dadosUser.username || "Anônimo",
-                    src:  modelViewer.src,
+                    src: modelViewer.src,
                     nome: nomeModelo.innerHTML,
                     timestamp: timestamp
                 });

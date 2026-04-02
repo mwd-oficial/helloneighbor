@@ -4,6 +4,7 @@ const videos = document.querySelectorAll(".videos")
 let iVideo = 0
 let divVideosVisiveis = []
 let timeoutPause = []
+const playing = [];
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

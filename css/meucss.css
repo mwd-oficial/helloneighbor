@@ -951,6 +951,7 @@ p {
 				transition-duration: .25s;
 				z-index: 1 !important;
 				pointer-events: none;
+				display: none;
 
 				& span {
 					font-size: 40px;
