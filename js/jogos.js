@@ -4,6 +4,7 @@ const videos = document.querySelectorAll(".videos")
 let iVideo = 0
 let divVideosVisiveis = []
 let timeoutPause = []
+let timeoutPlay = []
 const playing = [];
 
 const observer = new IntersectionObserver((entries) => {
@@ -11,9 +12,12 @@ const observer = new IntersectionObserver((entries) => {
         let i = entry.target.dataset.index
         if (entry.isIntersecting) {
             clearTimeout(timeoutPause[i]);
-            videos[i].play()
-            videosFixed[i].play()
+            timeoutPlay[i] = setTimeout(() => {
+                videos[i].play()
+                videosFixed[i].play()
+            }, 3000);
         } else {
+            clearTimeout(timeoutPlay[i])
             timeoutPause[i] = setTimeout(() => {
                 if (!videos[i].paused) videos[i].pause()
                 if (!videosFixed[i].paused) videosFixed[i].pause()
