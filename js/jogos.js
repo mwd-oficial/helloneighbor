@@ -5,41 +5,75 @@ let iVideo = 0
 let divVideosVisiveis = []
 let timeoutPause = []
 let timeoutPlay = []
-const playing = [];
+let videoState = [] // "playing" ou "paused"
+
+// 👉 pausa todos exceto o atual (opcional, mas recomendado)
+function pauseAllExcept(index) {
+    videos.forEach((v, i) => {
+        if (i !== index) {
+            if (!v.paused) v.pause()
+            if (!videosFixed[i].paused) videosFixed[i].pause()
+            videoState[i] = "paused"
+        }
+    })
+}
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         let i = entry.target.dataset.index
+
         if (entry.isIntersecting) {
-            clearTimeout(timeoutPause[i]);
+            clearTimeout(timeoutPause[i])
+
             timeoutPlay[i] = setTimeout(() => {
-                videos[i].play()
-                videosFixed[i].play()
-            }, 3000);
+                // 🔒 garante que ainda está visível
+                if (!divVideosVisiveis[i]) return
+
+                // 🔒 evita play duplicado
+                if (videoState[i] !== "playing") {
+
+                    // 👉 opcional (remove se quiser múltiplos vídeos tocando)
+                    pauseAllExcept(i)
+
+                    videos[i].play().catch(() => {})
+                    videosFixed[i].play().catch(() => {})
+
+                    videoState[i] = "playing"
+                }
+            }, 300)
+
         } else {
             clearTimeout(timeoutPlay[i])
+
             timeoutPause[i] = setTimeout(() => {
-                if (!videos[i].paused) videos[i].pause()
-                if (!videosFixed[i].paused) videosFixed[i].pause()
-            }, 1000);
+                // 🔒 evita pause duplicado
+                if (videoState[i] !== "paused") {
+
+                    if (!videos[i].paused) videos[i].pause()
+                    if (!videosFixed[i].paused) videosFixed[i].pause()
+
+                    videoState[i] = "paused"
+                }
+            }, 300)
         }
-    });
+    })
 }, {
-    threshold: 0.01
-});
+    threshold: 0.1
+})
 
 const observerDivVideo = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         let i = entry.target.dataset.index
+
         if (entry.isIntersecting) {
             divVideosVisiveis[i] = true
         } else {
             divVideosVisiveis[i] = false
         }
-    });
+    })
 }, {
-    threshold: 0.01
-});
+    threshold: 0.1
+})
 
 window.addEventListener("load", function () {
     jogos.forEach((el, i) => {
