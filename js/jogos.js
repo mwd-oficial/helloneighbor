@@ -4,11 +4,24 @@ const videos = document.querySelectorAll(".videos")
 let iVideo = 0
 let divVideosVisiveis = []
 let timeoutPause = []
-const playing = [];
+let timeoutPlay = []
+let videoState = [] // "playing" ou "paused"
+
+// 👉 pausa todos exceto o atual (opcional, mas recomendado)
+function pauseAllExcept(index) {
+    videos.forEach((v, i) => {
+        if (i !== index) {
+            if (!v.paused) v.pause()
+            if (!videosFixed[i].paused) videosFixed[i].pause()
+            videoState[i] = "paused"
+        }
+    })
+}
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         let i = entry.target.dataset.index
+
         if (entry.isIntersecting) {
             clearTimeout(timeoutPause[i]);
             if (videos[i].paused) {
@@ -18,12 +31,14 @@ const observer = new IntersectionObserver((entries) => {
                 videosFixed[i].play().catch(() => { });
             }
         } else {
+            clearTimeout(timeoutPlay[i])
+
             timeoutPause[i] = setTimeout(() => {
                 if (!videos[i].paused) videos[i].pause();
                 if (!videosFixed[i].paused) videosFixed[i].pause();
             }, 1000);
         }
-    });
+    })
 }, {
     threshold: 0.05
 });
@@ -31,12 +46,13 @@ const observer = new IntersectionObserver((entries) => {
 const observerDivVideo = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         let i = entry.target.dataset.index
+
         if (entry.isIntersecting) {
             divVideosVisiveis[i] = true
         } else {
             divVideosVisiveis[i] = false
         }
-    });
+    })
 }, {
     threshold: 0.05
 });
