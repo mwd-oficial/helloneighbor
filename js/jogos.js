@@ -11,17 +11,21 @@ const observer = new IntersectionObserver((entries) => {
         let i = entry.target.dataset.index
         if (entry.isIntersecting) {
             clearTimeout(timeoutPause[i]);
-            videos[i].play()
-            videosFixed[i].play()
+            if (videos[i].paused) {
+                videos[i].play().catch(() => { });
+            }
+            if (videosFixed[i].paused) {
+                videosFixed[i].play().catch(() => { });
+            }
         } else {
             timeoutPause[i] = setTimeout(() => {
-                if (!videos[i].paused) videos[i].pause()
-                if (!videosFixed[i].paused) videosFixed[i].pause()
+                if (!videos[i].paused) videos[i].pause();
+                if (!videosFixed[i].paused) videosFixed[i].pause();
             }, 1000);
         }
     });
 }, {
-    threshold: 0.01
+    threshold: 0.05
 });
 
 const observerDivVideo = new IntersectionObserver((entries) => {
@@ -34,16 +38,35 @@ const observerDivVideo = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.01
+    threshold: 0.05
 });
 
+jogos.forEach((el, i) => {
+    videos[i].load();
+    videosFixed[i].load();
+    videos[i].muted = true;
+    videos[i].play()
+        .then(() => {
+            setTimeout(() => {
+                videos[i].pause();
+                videos[i].currentTime = 0;
+            }, 200);
+        })
+        .catch(() => { });
+    videosFixed[i].muted = true;
+    videosFixed[i].play()
+        .then(() => {
+            setTimeout(() => {
+                videosFixed[i].pause();
+                videosFixed[i].currentTime = 0;
+            }, 200);
+        })
+        .catch(() => { });
+    el.dataset.index = i;
+    observer.observe(el);
+})
+
 window.addEventListener("load", function () {
-    jogos.forEach((el, i) => {
-        videos[i].currentTime = 0
-        videosFixed[i].currentTime = 0
-        el.dataset.index = i;
-        observer.observe(el);
-    })
 
     divVideo.forEach((el, i) => {
         el.dataset.index = i;

@@ -149,61 +149,45 @@ if (isDesktop) {
     playConfig(playFixed)
 }
 
-function playConfig(playEl) {
-    let timeouts = []
-    playEl.forEach((el, i) => {
-        el.style.opacity = 0
-        el.classList.add("efeito-hover")
-    })
+function playConfig(playEls) {
+    const sombras = document.querySelectorAll(".sombra");
 
-    document.querySelectorAll(".sombra").forEach((sombra, i) => {
+    playEls.forEach((playEl, i) => {
+        let hideTimeout;
+
         const showPlay = () => {
-            // Garante que o mouse não está sobre o botão
-            if (!playEl[i].matches(':hover')) {
-                playEl[i].style.opacity = 1
-                clearTimeout(timeouts[i])
-                timeouts[i] = setTimeout(() => {
-                    // Só esconde se o mouse não estiver no botão
-                    if (!playEl[i].matches(':hover')) {
-                        playEl[i].style.opacity = 0
-                    }
-                }, 2000)
-            }
-        }
+            clearTimeout(hideTimeout);
+            playEl.style.opacity = 1;
+        };
 
-        sombra.onmouseenter = () => {
-            playEl[i].style.opacity = 1
-            clearTimeout(timeouts[i])
-            timeouts[i] = setTimeout(() => {
-                if (!playEl[i].matches(':hover')) {
-                    playEl[i].style.opacity = 0
+        const hidePlay = () => {
+            clearTimeout(hideTimeout);
+            hideTimeout = setTimeout(() => {
+                // Só esconde se o mouse não estiver no botão ou na sombra
+                if (!playEl.matches(':hover')) {
+                    playEl.style.opacity = 0;
                 }
-            }, 2000)
-        }
+            }, 2000);
+        };
 
-        sombra.onmousemove = (e) => {
-            // Evita contar movimento dentro do botão
-            if (!playEl[i].contains(e.target)) {
-                showPlay()
+        // Inicializa estado do botão
+        playEl.style.opacity = 0;
+        playEl.classList.add("efeito-hover");
+
+        // Eventos do botão
+        playEl.addEventListener("mouseenter", showPlay);
+        playEl.addEventListener("mouseleave", hidePlay);
+
+        // Eventos da sombra
+        sombras[i].addEventListener("mousemove", (e) => {
+            if (!playEl.contains(e.target)) {
+                showPlay();
+                hidePlay(); // reinicia o timeout a cada movimento
             }
-        }
-    })
+        });
 
-    playEl.forEach((el, i) => {
-        el.onmouseenter = () => {
-            clearTimeout(timeouts[i])
-            playEl[i].style.opacity = 1
-        }
-
-        el.onmouseleave = () => {
-            // Quando sair do botão, deixa o botão sumir após 2s (se mouse estiver parado na sombra)
-            timeouts[i] = setTimeout(() => {
-                if (!document.querySelectorAll(".sombra")[i].matches(':hover')) {
-                    playEl[i].style.opacity = 0
-                }
-            }, 2000)
-        }
-    })
+        sombras[i].addEventListener("mouseleave", hidePlay);
+    });
 }
 
 let msnry
