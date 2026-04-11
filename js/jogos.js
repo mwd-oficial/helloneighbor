@@ -1,47 +1,174 @@
 const jogos = document.querySelectorAll(".jogos");
 const divVideo = document.querySelectorAll(".div-video");
 const videos = document.querySelectorAll(".videos")
+const pageLoader = document.querySelector(".page-loader")
+const pCarregandoVideos = document.querySelector("#p-carregando-videos")
 let iVideo = 0
 let divVideosVisiveis = []
 let timeoutPause = []
-let timeoutPlay = []
-let videoState = [] // "playing" ou "paused"
 
-// 👉 pausa todos exceto o atual (opcional, mas recomendado)
-function pauseAllExcept(index) {
-    videos.forEach((v, i) => {
-        if (i !== index) {
-            if (!v.paused) v.pause()
-            if (!videosFixed[i].paused) videosFixed[i].pause()
-            videoState[i] = "paused"
+
+// URLs HLS públicas do Mux (exemplo)
+const hlsUrls = [
+    'devgamm',
+    'hn-early-prototype',
+    'hn-prototype',
+    'hn-pre-alpha',
+    'hn-alpha1',
+    'hn-alpha1.5',
+    'hn-alpha2',
+    'hn-alpha3',
+    'hn-alpha4',
+    'hn-beta3',
+    'hello-bendy',
+    'hello-neighbor',
+    'hide-and-seek',
+    'secret-neighbor',
+    'hello-engineer',
+    'hg-prototype',
+    'hg-pre-alpha',
+    'hn2-alpha1',
+    'hn2-alpha1.5',
+    'hn2-prototype',
+    'hn2-beta',
+    'hn2-demo',
+    'hello-neighbor2',
+    'back-to-school',
+    'late-fees',
+    'hello-copter',
+    'search-and-rescue',
+    'nickys-diaries',
+    'rbo-prototype',
+    'hn3-prototype1',
+    'hn3-prototype2',
+    'hn3-prototype3',
+    'hn-mod-kit',
+    'raven-brooks',
+    'lqg',
+];
+
+// Classe para controlar cada vídeo do fluxo
+class VideoController {
+    constructor(videoElement, fixedVideo) {
+        this.video1 = fixedVideo;
+        this.video2 = videoElement;
+        this.hls = null;
+        this.loaded = false;
+        this.timeUpdateBound = false;
+        this.isPlaying = false;
+    }
+
+    init(hlsUrl) {
+        if (!hlsUrl) return;
+
+        if (Hls.isSupported()) {
+            this.hls = new Hls({
+                autoStartLoad: false,
+                maxBufferLength: 4,
+                startFragPrefetch: true
+            });
+
+            this.hls.loadSource(`videos/${hlsUrl}/master.m3u8`);
+            this.hls.attachMedia(this.video1);
+            this.video1.addEventListener('loadedmetadata', () => {
+                if (this.video2) {
+                    this.video2.srcObject = this.video1.captureStream();
+                }
+            });
+
+            this.hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                this.hls.startLoad(0);
+            });;
+
+            this.hls.on(Hls.Events.FRAG_BUFFERED, () => {
+                if (!this.loaded) {
+                    this.loaded = true;
+
+                    this.hls.stopLoad();
+                }
+            });
+        } else {
+            this.video1.src = hlsUrl;
+            if (this.video2) this.video2.src = hlsUrl;
+            this.loaded = true;
         }
-    })
+    }
+
+    play() {
+        if (!this.hls) return;
+
+        this.hls.startLoad();
+
+        this.video1.play().then(() => {
+            this.isPlaying = true;
+        }).catch(() => { });
+
+        if (this.video2) {
+            this.video2.play().catch(() => { });
+        }
+    }
+
+    pause() {
+        this.video1.pause();
+        if (this.video2) this.video2.pause();
+
+        this.isPlaying = false;
+    }
 }
+
+// ===== Pré-carregamento em fila =====
+const controllers = [];
+let preloadIndex = 0;
+pCarregandoVideos.innerHTML = `Carregando vídeos (${preloadIndex}/${hlsUrls.length})`
+
+function preloadNext() {
+    if (preloadIndex >= hlsUrls.length) {
+        console.log("Preload finalizado");
+        pageLoader.style.opacity = 0
+        pageLoader.style.visibility = "hidden"
+        pageLoader.style.zIndex = -1
+        document.body.style.overflowY = "scroll";
+        return;
+    }
+    
+    const videoEl = videos[preloadIndex];
+    const fixedVideo = videosFixed[preloadIndex % videosFixed.length]; // se só 1 fixed, sincroniza todos
+    const controller = new VideoController(videoEl, fixedVideo);
+    
+    controllers.push(controller);
+    
+    controller.init(hlsUrls[preloadIndex]);
+    
+    preloadIndex++;
+    pCarregandoVideos.innerHTML = `Carregando vídeos (${preloadIndex}/${hlsUrls.length})`
+    setTimeout(preloadNext, 300); // fila suave
+}
+
+// Começa o preload
+preloadNext();
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        let i = entry.target.dataset.index
+        const i = entry.target.dataset.index;
+        const controller = controllers[i];
+        if (!controller) return;
 
-        if (entry.isIntersecting) {
-            clearTimeout(timeoutPause[i]);
-            if (videos[i].paused) {
-                videos[i].play().catch(() => { });
-            }
-            if (videosFixed[i].paused) {
-                videosFixed[i].play().catch(() => { });
-            }
-        } else {
-            clearTimeout(timeoutPlay[i])
-
-            timeoutPause[i] = setTimeout(() => {
-                if (!videos[i].paused) videos[i].pause();
-                if (!videosFixed[i].paused) videosFixed[i].pause();
-            }, 1000);
+        if (entry.isIntersecting && controller.loaded) {
+            controller.play()
+        } else if (!entry.isIntersecting) {
+            if (!controller.isPlaying) return;
+            controller.pause();
         }
-    })
+    });
 }, {
-    threshold: 0.05
+    threshold: 0.02
 });
+
+jogos.forEach((jogo, index) => {
+    jogo.dataset.index = index; // salva o índice no elemento
+    observer.observe(jogo);
+});
+
 
 const observerDivVideo = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -54,35 +181,30 @@ const observerDivVideo = new IntersectionObserver((entries) => {
         }
     })
 }, {
-    threshold: 0.05
+    threshold: 0.02
 });
 
-jogos.forEach((el, i) => {
-    videos[i].load();
-    videosFixed[i].load();
-    videos[i].muted = true;
-    videos[i].play()
-        .then(() => {
-            setTimeout(() => {
-                videos[i].pause();
-                videos[i].currentTime = 0;
-            }, 200);
-        })
-        .catch(() => { });
-    videosFixed[i].muted = true;
-    videosFixed[i].play()
-        .then(() => {
-            setTimeout(() => {
-                videosFixed[i].pause();
-                videosFixed[i].currentTime = 0;
-            }, 200);
-        })
-        .catch(() => { });
-    el.dataset.index = i;
-    observer.observe(el);
-})
-
 window.addEventListener("load", function () {
+    pageLoader.style.opacity = 1
+    pageLoader.style.visibility = "visible"
+    pageLoader.style.zIndex = 9999999
+
+    const checkReady = () => {
+        if (windowReady) {
+            document.body.style.overflowY = "hidden";
+        } else {
+            requestAnimationFrame(checkReady);
+        }
+    };
+
+    document.querySelector("#ui-to-top")?.addEventListener("click", () => {
+        setTimeout(() => {
+            controllers.forEach(c => c.pause())
+            console.log("ui to top clicado")
+        }, 3000);
+    })
+
+    checkReady();
 
     divVideo.forEach((el, i) => {
         el.dataset.index = i;
@@ -153,23 +275,20 @@ function darPlay(i) {
 }
 
 fechar.addEventListener("click", function () {
+    controllers[iVideo].play();
+
     fechar.style.display = "none"
     document.body.style.overflowY = "scroll"
 
     videosFixed.forEach((el) => {
-        if (divVideo[iVideo].offsetTop > window.scrollY && el.style.opacity == 1) el.style.opacity = 0
+        if (divVideo[iVideo].offsetTop > (window.scrollY + 75) && el.style.opacity == 1) {
+            videosFixed[iVideo - 1].style.opacity = 1
+            el.style.opacity = 0
+        }
         el.style.zIndex = "auto"
         el.controls = false
         el.muted = true
         el.volume = 1
         el.playbackRate = 1
     })
-
-    videosFixed[iVideo].play()
-    const newTime = videosFixed[iVideo].currentTime + 0.25;
-    if (newTime <= videos[iVideo].duration) {
-        videos[iVideo].currentTime = newTime;
-    }
-
 });
-

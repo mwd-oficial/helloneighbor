@@ -239,7 +239,6 @@ function pointarCursor(el) {
     }
 }
 
-
 function launchFullscreen() {
     if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen();
@@ -265,20 +264,22 @@ function exitFullscreen() {
     }
 }
 
+let divVideoIndex
 telaCheia.onclick = () => {
     if (document.fullscreenElement) {
+        if (typeof divVideosVisiveis !== "undefined") divVideosVisiveis.forEach((dvv, i) => { if (dvv) divVideoIndex = i })
         exitFullscreen()
     } else {
+        if (typeof divVideosVisiveis !== "undefined") divVideosVisiveis.forEach((dvv, i) => { if (dvv) divVideoIndex = i })
         launchFullscreen()
     }
 }
 
 document.onfullscreenchange = () => {
-    if (document.fullscreenElement) {
-        telaCheia.innerHTML = "fullscreen_exit"
-    } else {
-        telaCheia.innerHTML = "fullscreen"
-    }
+    if (document.fullscreenElement) telaCheia.innerHTML = "fullscreen_exit"
+    else telaCheia.innerHTML = "fullscreen"
+
+    if (typeof divVideo !== "undefined") divVideo[divVideoIndex].scrollIntoView()
 }
 
 
