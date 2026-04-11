@@ -265,12 +265,23 @@ function exitFullscreen() {
 }
 
 let divVideoIndex
+let algumaVisivel = false
 telaCheia.onclick = () => {
     if (document.fullscreenElement) {
-        if (typeof divVideosVisiveis !== "undefined") divVideosVisiveis.forEach((dvv, i) => { if (dvv) divVideoIndex = i })
+        if (typeof divVideosVisiveis !== "undefined") divVideosVisiveis.forEach((dvv, i) => { 
+            if (dvv) {
+                divVideoIndex = i 
+                algumaVisivel = true
+            }
+        })
         exitFullscreen()
     } else {
-        if (typeof divVideosVisiveis !== "undefined") divVideosVisiveis.forEach((dvv, i) => { if (dvv) divVideoIndex = i })
+        if (typeof divVideosVisiveis !== "undefined") divVideosVisiveis.forEach((dvv, i) => { 
+            if (dvv) {
+                divVideoIndex = i 
+                algumaVisivel = true
+            }
+        })
         launchFullscreen()
     }
 }
@@ -278,8 +289,13 @@ telaCheia.onclick = () => {
 document.onfullscreenchange = () => {
     if (document.fullscreenElement) telaCheia.innerHTML = "fullscreen_exit"
     else telaCheia.innerHTML = "fullscreen"
-
-    if (typeof divVideo !== "undefined") divVideo[divVideoIndex].scrollIntoView()
+    
+    if (typeof divVideo !== "undefined") {
+        if (algumaVisivel) {
+            divVideo[divVideoIndex].scrollIntoView()
+            algumaVisivel = false
+        }
+    }
 }
 
 
