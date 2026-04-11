@@ -56,6 +56,7 @@ class VideoController {
         this.loaded = false;
         this.timeUpdateBound = false;
         this.isPlaying = false;
+        this.chunkCount = 0;
     }
 
     init(hlsUrl) {
@@ -74,6 +75,11 @@ class VideoController {
                 if (this.video2) {
                     this.video2.srcObject = this.video1.captureStream();
                 }
+            });
+
+            this.hls.on(Hls.Events.FRAG_LOADED, (event, data) => {
+                this.chunkCount++;
+                console.log(`[${hlsUrl}] chunks carregadas:`, this.chunkCount);
             });
 
             this.hls.on(Hls.Events.MANIFEST_PARSED, () => {
@@ -109,6 +115,8 @@ class VideoController {
     }
 
     pause() {
+        if (this.hls) this.hls.stopLoad();
+
         this.video1.pause();
         if (this.video2) this.video2.pause();
 
@@ -130,15 +138,15 @@ function preloadNext() {
         document.body.style.overflowY = "scroll";
         return;
     }
-    
+
     const videoEl = videos[preloadIndex];
     const fixedVideo = videosFixed[preloadIndex % videosFixed.length]; // se só 1 fixed, sincroniza todos
     const controller = new VideoController(videoEl, fixedVideo);
-    
+
     controllers.push(controller);
-    
+
     controller.init(hlsUrls[preloadIndex]);
-    
+
     preloadIndex++;
     pCarregandoVideos.innerHTML = `Carregando vídeos (${preloadIndex}/${hlsUrls.length})`
     setTimeout(preloadNext, 300); // fila suave
@@ -147,6 +155,12 @@ function preloadNext() {
 // Começa o preload
 preloadNext();
 
+
+
+let playTimeout = null;
+let pendingController = null;
+let currentPlaying = null;
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         const i = entry.target.dataset.index;
@@ -154,9 +168,30 @@ const observer = new IntersectionObserver((entries) => {
         if (!controller) return;
 
         if (entry.isIntersecting && controller.loaded) {
-            controller.play()
+            if (playTimeout) {
+                clearTimeout(playTimeout);
+                playTimeout = null;
+            }
+            pendingController = controller;
+
+            playTimeout = setTimeout(() => {
+                // Garante que ainda é o mesmo vídeo esperado
+                if (pendingController !== controller) return;
+                currentPlaying = controller;
+                controller.play()
+            }, 250);
         } else if (!entry.isIntersecting) {
             if (!controller.isPlaying) return;
+            
+            if (pendingController === controller) {
+                clearTimeout(playTimeout);
+                playTimeout = null;
+                pendingController = null;
+            }
+             if (currentPlaying === controller) {
+                controller.pause();
+                currentPlaying = null;
+            }
             controller.pause();
         }
     });
