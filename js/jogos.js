@@ -7,46 +7,6 @@ let iVideo = 0
 let divVideosVisiveis = []
 let timeoutPause = []
 
-
-// URLs HLS públicas do Mux (exemplo)
-const hlsUrls = [
-    'devgamm',
-    'hn-early-prototype',
-    'hn-prototype',
-    'hn-pre-alpha',
-    'hn-alpha1',
-    'hn-alpha1.5',
-    'hn-alpha2',
-    'hn-alpha3',
-    'hn-alpha4',
-    'hn-beta3',
-    'hello-bendy',
-    'hello-neighbor',
-    'hide-and-seek',
-    'secret-neighbor',
-    'hello-engineer',
-    'hg-prototype',
-    'hg-pre-alpha',
-    'hn2-alpha1',
-    'hn2-alpha1.5',
-    'hn2-prototype',
-    'hn2-beta',
-    'hn2-demo',
-    'hello-neighbor2',
-    'back-to-school',
-    'late-fees',
-    'hello-copter',
-    'search-and-rescue',
-    'nickys-diaries',
-    'rbo-prototype',
-    'hn3-prototype1',
-    'hn3-prototype2',
-    'hn3-prototype3',
-    'hn-mod-kit',
-    'raven-brooks',
-    'lqg',
-];
-
 // Classe para controlar cada vídeo do fluxo
 class VideoController {
     constructor(videoElement, fixedVideo) {

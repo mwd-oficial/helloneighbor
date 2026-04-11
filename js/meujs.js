@@ -1,5 +1,48 @@
 const API_URL = "https://helloneighbor.vercel.app"
 
+// URLs HLS de vídeos em jogos.html
+const hlsUrls = [
+    'devgamm',
+    'hn-early-prototype',
+    'hn-prototype',
+    'hn-pre-alpha',
+    'hn-alpha1',
+    'hn-alpha1.5',
+    'hn-alpha2',
+    'hn-alpha3',
+    'hn-alpha4',
+    'hn-beta3',
+    'hello-bendy',
+    'hello-neighbor',
+    'hide-and-seek',
+    'secret-neighbor',
+    'hello-engineer',
+    'hg-prototype',
+    'hg-pre-alpha',
+    'hn2-alpha1',
+    'hn2-alpha1.5',
+    'hn2-prototype',
+    'hn2-beta',
+    'hn2-demo',
+    'hello-neighbor2',
+    'back-to-school',
+    'late-fees',
+    'hello-copter',
+    'search-and-rescue',
+    'nickys-diaries',
+    'rbo-prototype',
+    'hn3-prototype1',
+    'hn3-prototype2',
+    'hn3-prototype3',
+    'hn-mod-kit',
+    'raven-brooks',
+    'lqg',
+];
+const jogosNum = document.querySelector("#jogos-num")
+const versoesTesteNum = document.querySelector("#versoes-teste-num")
+let somaNum = Number(jogosNum.innerHTML) + Number(versoesTesteNum.innerHTML) + 3 // 3 do raven-brooks, lqg e hn-mod-kit
+if (somaNum != hlsUrls.length) console.error("Erro disparado por mim mesmo: Número de vídeos cadastrados não correspondem ao número de jogos listados dentro das 3 boxes da tela inicial. Atualize a lista.")
+
 const fechar = document.querySelector("#fechar")
 const fecharModelo3d = document.querySelector("#fechar-modelo3d")
 const fecharCarrossel = document.querySelector("#fechar-carrossel")
@@ -196,9 +239,9 @@ window.onload = () => {
         pointarCursor(document.querySelector("#ui-to-top"))
         const boxIcon = document.querySelectorAll(".box-icon")
         if (boxIcon[0] && isDesktop) {
-            let boxIconHeight = boxIcon[1].getBoundingClientRect().height
+            let boxIconHeight = boxIcon[2].getBoundingClientRect().height
             boxIcon[0].style.height = boxIconHeight + "px"
-            boxIcon[2].style.height = boxIconHeight + "px"
+            boxIcon[1].style.height = boxIconHeight + "px"
         }
     }, 1000);
     /*
