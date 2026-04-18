@@ -40,8 +40,10 @@ const hlsUrls = [
 ];
 const jogosNum = document.querySelector("#jogos-num")
 const versoesTesteNum = document.querySelector("#versoes-teste-num")
-let somaNum = Number(jogosNum.innerHTML) + Number(versoesTesteNum.innerHTML) + 3 // 3 do raven-brooks, lqg e hn-mod-kit
-if (somaNum != hlsUrls.length) console.error("Erro disparado por mim mesmo: Número de vídeos cadastrados não correspondem ao número de jogos listados dentro das 3 boxes da tela inicial. Atualize a lista.")
+if (jogosNum && versoesTesteNum) {
+    let somaNum = Number(jogosNum.innerHTML) + Number(versoesTesteNum.innerHTML) + 3 // 3 do raven-brooks, lqg e hn-mod-kit
+    if (somaNum != hlsUrls.length) console.error("Erro disparado por mim mesmo: Número de vídeos cadastrados não correspondem ao número de jogos listados dentro das 3 boxes da tela inicial. Atualize a lista.")
+}
 
 const fechar = document.querySelector("#fechar")
 const fecharModelo3d = document.querySelector("#fechar-modelo3d")
